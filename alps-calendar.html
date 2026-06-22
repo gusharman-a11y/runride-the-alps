@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alps 2026 — Calendar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#060605;
+  --surface:#0C0B09;
+  --card:#111009;
+  --snow:#EDE8DC;
+  --snow-dim:rgba(237,232,220,0.42);
+  --snow-ghost:rgba(237,232,220,0.07);
+  --border:rgba(237,232,220,0.07);
+  --border-mid:rgba(237,232,220,0.13);
+  --run:#00E8B0;
+  --run-bg:rgba(0,232,176,0.06);
+  --run-border:rgba(0,232,176,0.2);
+  --ride:#FF4E1A;
+  --ride-bg:rgba(255,78,26,0.07);
+  --ride-border:rgba(255,78,26,0.22);
+  --gold:#F5C842;
+  --gold-bg:rgba(245,200,66,0.07);
+  --gold-border:rgba(245,200,66,0.22);
+  --rest:rgba(237,232,220,0.04);
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--snow);font-family:'Inter',sans-serif;font-weight:300;min-height:100vh;cursor:none}
+
+/* cursor */
+#cd,#cr{position:fixed;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%)}
+#cd{width:5px;height:5px;background:var(--snow)}
+#cr{width:38px;height:38px;border:1px solid rgba(237,232,220,0.2);transition:all .14s ease}
+body:has(a:hover) #cr{transform:translate(-50%,-50%) scale(1.6);border-color:var(--run)}
+
+/* nav */
+nav{padding:28px 56px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--snow);text-decoration:none}
+.nav-back{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--snow-dim);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s}
+.nav-back:hover{color:var(--snow)}
+
+/* header */
+.page-header{padding:72px 56px 56px;border-bottom:1px solid var(--border)}
+.header-inner{max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.header-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.45em;text-transform:uppercase;color:var(--snow-dim);display:block;margin-bottom:16px}
+.header-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,7vw,6rem);font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;line-height:0.9;color:var(--snow)}
+.header-sub{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;font-style:italic;color:var(--snow-dim);margin-top:12px}
+.legend{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--snow-dim)}
+.legend-dot{width:8px;height:8px;border-radius:50%}
+.legend-dot.run{background:var(--run)}
+.legend-dot.ride{background:var(--ride)}
+.legend-dot.travel{background:var(--gold)}
+.legend-dot.rest{background:var(--snow-dim)}
+
+/* calendar grid */
+.cal-wrap{padding:0 56px 80px;max-width:1360px;margin:0 auto}
+
+/* month label */
+.month-label{font-family:'Barlow Condensed',sans-serif;font-size:clamp(5rem,10vw,9rem);font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;color:rgba(237,232,220,0.04);line-height:1;padding:40px 0 0;user-select:none}
+
+/* day headers */
+.cal-head{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-bottom:none;margin-top:-20px}
+.ch{padding:12px 16px;background:var(--surface);font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--snow-dim)}
+
+/* day grid */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+
+.day{background:var(--bg);min-height:140px;padding:14px 16px 16px;position:relative;transition:background .15s;display:flex;flex-direction:column}
+.day.empty{background:var(--surface);opacity:0.3}
+.day.d-run{background:rgba(0,232,176,0.04)}
+.day.d-ride{background:rgba(255,78,26,0.04)}
+.day.d-travel{background:rgba(245,200,66,0.04)}
+.day.d-rest{background:var(--rest)}
+.day:hover:not(.empty){background-color:rgba(237,232,220,0.03)}
+
+.day-num{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:700;line-height:1;margin-bottom:10px;opacity:0.18}
+.day.d-run .day-num{color:var(--run);opacity:0.55}
+.day.d-ride .day-num{color:var(--ride);opacity:0.55}
+.day.d-travel .day-num{color:var(--gold);opacity:0.6}
+.day.d-rest .day-num{opacity:0.2}
+
+.event-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--snow);line-height:1.2;display:block;margin-bottom:4px}
+.event-sub{font-size:10px;color:var(--snow-dim);line-height:1.4;display:block;margin-bottom:8px}
+.event-stats{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;margin-bottom:8px}
+.event-stats.run{color:var(--run)}
+.event-stats.ride{color:var(--ride)}
+
+.tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;padding:3px 8px;border:1px solid;margin-bottom:8px}
+.tag.run{color:var(--run);border-color:var(--run-border);background:var(--run-bg)}
+.tag.ride{color:var(--ride);border-color:var(--ride-border);background:var(--ride-bg)}
+.tag.travel{color:var(--gold);border-color:var(--gold-border);background:var(--gold-bg)}
+.tag.rest{color:var(--snow-dim);border-color:var(--border-mid);background:var(--snow-ghost)}
+
+/* google cal button */
+.gcal{display:inline-flex;align-items:center;gap:5px;font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--snow-dim);text-decoration:none;border:1px solid var(--border);padding:5px 9px;transition:all .2s;margin-top:auto;cursor:none;width:fit-content}
+.gcal:hover{border-color:var(--border-mid);color:var(--snow)}
+.gcal svg{width:9px;height:9px;flex-shrink:0}
+
+@media(max-width:900px){
+  nav{padding:20px 24px}
+  .page-header{padding:48px 24px 40px}
+  .cal-wrap{padding:0 24px 60px}
+  .day{min-height:100px;padding:10px 12px 12px}
+  .day-num{font-size:1.4rem}
+  .event-title{font-size:11px}
+  .event-sub,.event-stats{font-size:9px}
+}
+</style>
+</head>
+<body>
+
+<div id="cd"></div>
+<div id="cr"></div>
+
+<nav>
+  <a href="alps-adventure.html" class="nav-logo">Run.Ride the Alps</a>
+  <a href="alps-adventure.html" class="nav-back">← Back to overview</a>
+</nav>
+
+<div class="page-header">
+  <div class="header-inner">
+    <div>
+      <span class="header-label">Full itinerary</span>
+      <div class="header-title">July 2026</div>
+      <div class="header-sub">12 days · South Tyrol → French Alps</div>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot travel"></div>Travel</div>
+      <div class="legend-item"><div class="legend-dot run"></div>Trail Run</div>
+      <div class="legend-item"><div class="legend-dot ride"></div>Road Cycling</div>
+      <div class="legend-item"><div class="legend-dot rest"></div>Rest</div>
+    </div>
+  </div>
+</div>
+
+<div class="cal-wrap">
+  <div class="month-label">July</div>
+
+  <div class="cal-head">
+    <div class="ch">Mon</div>
+    <div class="ch">Tue</div>
+    <div class="ch">Wed</div>
+    <div class="ch">Thu</div>
+    <div class="ch">Fri</div>
+    <div class="ch">Sat</div>
+    <div class="ch">Sun</div>
+  </div>
+
+  <div class="cal-grid">
+
+    <!-- Week 1: July 1 = Wednesday -->
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+    <div class="day"><div class="day-num">1</div></div>
+    <div class="day"><div class="day-num">2</div></div>
+    <div class="day"><div class="day-num">3</div></div>
+    <div class="day"><div class="day-num">4</div></div>
+    <div class="day"><div class="day-num">5</div></div>
+
+    <!-- Week 2 -->
+    <div class="day"><div class="day-num">6</div></div>
+    <div class="day"><div class="day-num">7</div></div>
+    <div class="day"><div class="day-num">8</div></div>
+    <div class="day"><div class="day-num">9</div></div>
+    <div class="day"><div class="day-num">10</div></div>
+    <div class="day"><div class="day-num">11</div></div>
+
+    <!-- Sun 12 — Fly -->
+    <div class="day d-travel">
+      <div class="day-num">12</div>
+      <span class="tag travel">Travel</span>
+      <span class="event-title">Fly London → Verona</span>
+      <span class="event-sub">easyJet · Train via Bolzano (drop bikes) → Bressanone</span>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alps+2026+%E2%80%94+Fly+London+%E2%86%92+Verona&dates=20260712T060000Z%2F20260712T200000Z&details=Fly+London+Gatwick+%E2%86%92+Verona+(easyJet).+Train+Verona+%E2%86%92+Bolzano+%E2%86%92+Bressanone.+Drop+bikes+%26+cycling+kit+at+Bolzano+Youth+Hostel+on+the+way+through+(waiting+for+after+the+run).+Night%3A+Bressanone+Youth+Hostel.&location=London+Gatwick+Airport" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Add to calendar
+      </a>
+    </div>
+
+    <!-- Mon 13 — Arrive, prep -->
+    <div class="day d-travel">
+      <div class="day-num">13</div>
+      <span class="tag travel">Prep</span>
+      <span class="event-title">Bressanone</span>
+      <span class="event-sub">Arrive. Rest. Night: Youth Hostel.</span>
+    </div>
+
+    <!-- Tue 14 — Run Stage 1 -->
+    <div class="day d-run">
+      <div class="day-num">14</div>
+      <span class="tag run">Trail Run</span>
+      <span class="event-title">Run · Stage 1</span>
+      <span class="event-sub">Bressanone → Rifugio Puez</span>
+      <span class="event-stats run">32.7km · +1,640m · 4–5h</span>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alps+2026+%E2%80%94+Run+Stage+1%3A+Bressanone+%E2%86%92+Rifugio+Puez&dates=20260714T060000Z%2F20260714T120000Z&details=Alta+Via+2+%7C+32.7km+%7C+%2B1%2C640m+%7C+4-5hrs.+Plose+cable+car+%E2%86%92+Schl%C3%BCtterh%C3%BCtte+%E2%86%92+Rifugio+Puez.+Night%3A+Rifugio+Puez+(2%2C475m)+%E2%80%94+Booked.&location=Bressanone%2C+South+Tyrol%2C+Italy" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Add to calendar
+      </a>
+    </div>
+
+    <!-- Wed 15 — Run Stage 2 -->
+    <div class="day d-run">
+      <div class="day-num">15</div>
+      <span class="tag run">Trail Run</span>
+      <span class="event-title">Run · Stage 2</span>
+      <span class="event-sub">Rifugio Puez → Castiglioni Marmolada</span>
+      <span class="event-stats run">25.5km · +1,310m · 5–6h</span>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alps+2026+%E2%80%94+Run+Stage+2%3A+Rifugio+Puez+%E2%86%92+Castiglioni+Marmolada&dates=20260715T060000Z%2F20260715T130000Z&details=25.5km+%7C+%2B1%2C310m+%7C+5-6hrs.+Via+Passo+Gardena+%E2%86%92+Pisciadu+%E2%86%92+Rifugio+Bo%C3%A8+%E2%86%92+Passo+Pordoi+%E2%86%92+Viel+dal+Pan.+%E2%9A%A0+Val+Setus+fixed+cables+%E2%80%94+walk+section.+Night%3A+Rifugio+Castiglioni+Marmolada+(2%2C057m)+%E2%80%94+CHECK+OUT+08%3A00-09%3A00+SHARP.&location=Rifugio+Puez%2C+Dolomites%2C+Italy" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Add to calendar
+      </a>
+    </div>
+
+    <!-- Thu 16 — Run Stage 3 -->
+    <div class="day d-run">
+      <div class="day-num">16</div>
+      <span class="tag run">Trail Run</span>
+      <span class="event-title">Run · Stage 3</span>
+      <span class="event-sub">Castiglioni → Capanna Passo Valles</span>
+      <span class="event-stats run">27km · +900m · 4–5h</span>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alps+2026+%E2%80%94+Run+Stage+3%3A+Castiglioni+%E2%86%92+Capanna+Passo+Valles&dates=20260716T060000Z%2F20260716T120000Z&details=27km+%7C+%2B900m+%7C+4-5hrs.+Via+Malga+Ciapela+%E2%86%92+Forca+Rossa+%E2%86%92+Passo+San+Pellegrino.+%F0%9F%92%B0+Only+ATM+on+route+at+Passo+San+Pellegrino+%E2%80%94+withdraw+here+(all+huts+cash+only).+Night%3A+Capanna+Passo+Valles+(2%2C032m)+%E2%80%94+Booked.&location=Rifugio+Castiglioni+Marmolada%2C+Italy" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Add to calendar
+      </a>
+    </div>
+
+    <!-- Fri 17 — Run Stage 4 + Prologue -->
+    <div class="day d-run">
+      <div class="day-num">17</div>
+      <span class="tag run">Trail Run · Finish 🏁</span>
+      <span class="event-title">Run · Stage 4</span>
+      <span class="event-sub">Passo Valles → San Martino di Castrozza</span>
+      <span class="event-stats run">10.5km · +530m · max 2,804m</span>
+      <span class="event-sub" style="margin-top:4px">→ Transfer to Bolzano. Night: Youth Hostel — collect bikes dropped here on the way out.</span>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alps+2026+%E2%80%94+Run+Stage+4+FINISH+%F0%9F%8F%81&dates=20260717T060000Z%2F20260717T180000Z&details=10.5km+%7C+%2B530m+%7C+Max+altitude+2%2C804m.+Passo+Valles+%E2%86%92+Passo+Farangole+(2%2C548m)+%E2%86%92+Rifugio+Rosetta+(2%2C581m)+%E2%86%92+Col+Verde+gondola+%E2%86%92+San+Martino+di+Castrozza.+Then+private+minibus+%E2%86%92+Bolzano+(1h15).+Collect+bikes+%26+cycling+kit.+Night%3A+Bolzano.&location=Capanna+Passo+Valles%2C+Italy" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Add to calendar
+      </a>
+    </div>
+
+    <!-- Sat 18 — Ride Stage 1: Stelvio -->
+    <div class="day d-ride">
+      <div class="day-num">18</div>
+      <span class="tag ride">Road Cycling</span>
+      <span class="event-title">Ride · Stage 1</span>
+      <span class="event-sub">Bolzano → Stelvio → Bormio</span>
+      <span class="event-stats ride">~96km · +2,560m · 2,758m</span>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alps+2026+%E2%80%94+Ride+Stage+1%3A+Bolzano+%E2%86%92+Bormio+via+Stelvio&dates=20260718T070000Z%2F20260718T190000Z&details=~96km+%7C+%2B2%2C560m.+Train+Bolzano+%E2%86%92+Merano+(%E2%82%AC7.50+with+bikes+%E2%80%94+go+early+for+bike+spaces).+Vinschgau+cycle+path+%E2%86%92+Prato+allo+Stelvio+%E2%86%92+48+hairpins+to+summit+2%2C758m+%E2%86%92+descend+to+Bormio.+Bags+via+Bormio+Driver:+%2B39+328+7654951+(bormiodriver.com).&location=Bolzano%2C+South+Tyrol%2C+Italy" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Add to calendar
+      </a>
+    </div>
+
+    <!-- Sun 19 — Bormio optional -->
+    <div class="day d-rest">
+      <div class="day-num">19</div>
+      <span class="tag rest">Optional</span>
+      <span class="event-title">Bormio</span>
+      <span class="event-sub">Thermal baths or Mortirolo loop (111km)</span>
+    </div>
+
+    <!-- Mon 20 — Gavia + Garda -->
+    <div class="day d-ride">
+      <div class="day-num">20</div>
+      <span class="tag ride">Road Cycling</span>
+      <span class="event-title">Ride · Stage 3</span>
+      <span class="event-sub">Bormio → Gavia → Lake Garda</span>
+      <span class="event-stats ride">~55km · +1,400m · 2,621m</span>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alps+2026+%E2%80%94+Ride+Stage+3%3A+Bormio+%E2%86%92+Lake+Garda+via+Gavia&dates=20260720T070000Z%2F20260720T200000Z&details=~55km+%7C+%2B1%2C400m.+Bormio+%E2%86%92+Santa+Caterina+%E2%86%92+Passo+di+Gavia+(2%2C621m)+%E2%86%92+Ponte+di+Legno+%E2%86%92+Edolo.+Then+train+Edolo+%E2%86%92+Brescia+%E2%86%92+Lake+Garda.+Night%3A+Lake+Garda.&location=Bormio%2C+Lombardy%2C+Italy" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Add to calendar
+      </a>
+    </div>
+
+    <!-- Tue 21 — Garda rest -->
+    <div class="day d-rest">
+      <div class="day-num">21</div>
+      <span class="tag rest">Rest</span>
+      <span class="event-title">Lake Garda</span>
+      <span class="event-sub">Rest day. Swim. Eat everything.</span>
+    </div>
+
+    <!-- Wed 22 — Garda → Briançon -->
+    <div class="day d-ride">
+      <div class="day-num">22</div>
+      <span class="tag ride">Road Cycling</span>
+      <span class="event-title">Ride · Stage 4</span>
+      <span class="event-sub">Garda → Oulx → Briançon</span>
+      <span class="event-stats ride">~35km · Montgenèvre 1,860m</span>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alps+2026+%E2%80%94+Ride+Stage+4%3A+Lake+Garda+%E2%86%92+Bri%C3%A7on&dates=20260722T080000Z%2F20260722T200000Z&details=Ferry+Lake+Garda+%E2%86%92+train+to+Oulx+%E2%86%92+ride+Col+de+Montgenv%C3%A8re+(1%2C860m)+%E2%86%92+Bri%C3%A7on.+Night%3A+Logis+H%C3%B4tel+de+la+Chauss%C3%A9e%2C+Bri%C3%A7on.&location=Lake+Garda%2C+Italy" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Add to calendar
+      </a>
+    </div>
+
+    <!-- Thu 23 — FINALE -->
+    <div class="day d-ride">
+      <div class="day-num">23</div>
+      <span class="tag ride">Finale · Tour de France 🏁</span>
+      <span class="event-title">Ride · Stage 5</span>
+      <span class="event-sub">Briançon → Alpe d'Huez</span>
+      <span class="event-stats ride">~70km · +1,500m · 21 hairpins</span>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alps+2026+%E2%80%94+FINALE%3A+Bri%C3%A7on+%E2%86%92+Alpe+d%27Huez+%F0%9F%8F%81&dates=20260723T080000Z%2F20260723T190000Z&details=~70km+%7C+%2B1%2C500m.+Bri%C3%A7on+%E2%86%92+Col+du+Lautaret+(2%2C058m)+%E2%86%92+Bourg+d%27Oisans+%E2%86%92+21+hairpins+up+Alpe+d%27Huez.+Tour+de+France.+Each+hairpin+numbered+and+named+after+a+Tour+winner.+Pace+the+Lautaret.&location=Bri%C3%A7on%2C+Hautes-Alpes%2C+France" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Add to calendar
+      </a>
+    </div>
+
+    <!-- Fri 24 – Thu 31 -->
+    <div class="day"><div class="day-num">24</div></div>
+    <div class="day"><div class="day-num">25</div></div>
+    <div class="day"><div class="day-num">26</div></div>
+    <div class="day"><div class="day-num">27</div></div>
+    <div class="day"><div class="day-num">28</div></div>
+    <div class="day"><div class="day-num">29</div></div>
+    <div class="day"><div class="day-num">30</div></div>
+    <div class="day"><div class="day-num">31</div></div>
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+
+  </div>
+</div>
+
+<script>
+const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
+</script>
+</body>
+</html>
