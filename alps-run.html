@@ -85,6 +85,14 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .komoot-ext{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--snow-dim);text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:18px 40px;transition:color .2s}
 .komoot-ext:hover{color:var(--run)}
 
+/* CINEMATIC PHOTO BANDS */
+.photo-band{position:relative;height:75vh;min-height:440px;background-size:cover;background-position:center;background-attachment:fixed;display:flex;align-items:flex-end;overflow:hidden}
+.photo-band::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,5,0.85) 0%,rgba(6,6,5,0.15) 50%,rgba(6,6,5,0.35) 100%)}
+.photo-band-text{position:relative;z-index:2;padding:0 56px 56px;max-width:900px}
+.pb-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.6rem,3.5vw,3rem);font-weight:300;color:var(--snow);line-height:1.2}
+.pb-credit{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(237,232,220,0.55);margin-top:16px}
+@media(max-width:900px){.photo-band{background-attachment:scroll;height:55vh}.photo-band-text{padding:0 22px 40px}}
+
 /* LOGISTICS */
 .logistics{padding:0 56px 90px;max-width:1360px;margin:0 auto}
 .log-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:28px}
@@ -163,8 +171,16 @@ footer{padding:50px 56px;border-top:1px solid var(--border);font-size:10px;lette
   <p style="font-size:13px;color:var(--snow-dim);letter-spacing:0.05em;">Each stage below has its own map. Scroll on for the day-by-day.</p>
 </section>
 
+<!-- CINEMATIC BAND -->
+<div class="photo-band" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Seceda_2.jpg?width=2000')">
+  <div class="photo-band-text">
+    <div class="pb-quote">The Seceda ridgeline — the Puez-Odle group you cross on day one.</div>
+    <div class="pb-credit">Dolomites · South Tyrol</div>
+  </div>
+</div>
+
 <!-- STAGES -->
-<section class="sec reveal" style="padding-top:0">
+<section class="sec reveal" style="padding-top:90px">
   <span class="sec-label">Day by day</span>
   <h2 class="sec-h">The four stages</h2>
 
@@ -297,6 +313,14 @@ footer{padding:50px 56px;border-top:1px solid var(--border);font-size:10px;lette
 
   </div>
 </section>
+
+<!-- CINEMATIC BAND -->
+<div class="photo-band" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Pale_di_San_Martino_da_Cima_Rosetta.jpg?width=2000')">
+  <div class="photo-band-text">
+    <div class="pb-quote">Four days, four huts, one ridgeline at a time.</div>
+    <div class="pb-credit">Pale di San Martino · the finish</div>
+  </div>
+</div>
 
 <!-- LOGISTICS -->
 <div class="logistics reveal">
