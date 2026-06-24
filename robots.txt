@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gusharman-a11y.github.io/runride-the-alps/sitemap.xml
