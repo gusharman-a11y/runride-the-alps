@@ -77,6 +77,10 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .stage-detail strong{color:var(--snow);font-weight:400;display:block;margin-bottom:3px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:0.06em;text-transform:uppercase}
 .stage-map-row{border-top:1px solid var(--border)}
 .komoot-frame{width:100%;height:380px;border:none;display:block}
+.map-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--snow-dim);padding:16px 40px 6px;display:block;border-top:1px solid var(--border)}
+.map-label:first-child{border-top:none}
+.map-note{font-size:12px;color:var(--snow-dim);line-height:1.6;padding:16px 40px;border-top:1px solid var(--border)}
+.map-note strong{color:var(--ride);font-weight:400}
 .komoot-ext{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--snow-dim);text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:18px 40px;transition:color .2s}
 .komoot-ext:hover{color:var(--ride)}
 
@@ -266,6 +270,12 @@ footer{padding:50px 56px;border-top:1px solid var(--border);font-size:10px;lette
           <div class="stage-detail"><strong>Crossing into France</strong>A travel-heavy day — ferry, train, then one alpine col into the highest town in France.</div>
         </div>
       </div>
+      <div class="stage-map-row">
+        <span class="map-label">Oulx → Briançon</span>
+        <div class="map-note">Plan shows the <strong>Col de l'Échelle</strong> variant — the only public Komoot tour for this Oulx → Briançon leg. Your route crosses the parallel <strong>Col de Montgenèvre</strong> (the main road); similar distance, both arrive in Briançon.</div>
+        <iframe class="komoot-frame" src="https://www.komoot.com/tour/2107693948/embed?profile=1" frameborder="0" scrolling="no" loading="lazy"></iframe>
+        <a class="komoot-ext" href="https://www.komoot.com/tour/2107693948" target="_blank">Open on Komoot ↗</a>
+      </div>
     </div>
 
     <!-- Stage 5 — Finale -->
@@ -293,8 +303,12 @@ footer{padding:50px 56px;border-top:1px solid var(--border);font-size:10px;lette
         </div>
       </div>
       <div class="stage-map-row">
-        <iframe class="komoot-frame" src="https://www.komoot.com/tour/2842601158/embed?profile=1" frameborder="0" scrolling="no" loading="lazy"></iframe>
-        <a class="komoot-ext" href="https://www.komoot.com/tour/2842601158" target="_blank">Open on Komoot ↗</a>
+        <span class="map-label">Part 1 · Briançon → Col du Lautaret (28.6km · +870m)</span>
+        <iframe class="komoot-frame" src="https://www.komoot.com/tour/1396366666/embed?profile=1" frameborder="0" scrolling="no" loading="lazy"></iframe>
+        <a class="komoot-ext" href="https://www.komoot.com/tour/1396366666" target="_blank">Open on Komoot ↗</a>
+        <span class="map-label">Part 2 · Bourg d'Oisans → Alpe d'Huez finale (the 21 hairpins)</span>
+        <iframe class="komoot-frame" src="https://www.komoot.com/tour/1837642789/embed?profile=1" frameborder="0" scrolling="no" loading="lazy"></iframe>
+        <a class="komoot-ext" href="https://www.komoot.com/tour/1837642789" target="_blank">Open on Komoot ↗</a>
       </div>
     </div>
 
