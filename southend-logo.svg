@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700&amp;display=swap');
+      .wm{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;fill:#16161A}
+      .tg{font-family:'Schibsted Grotesk',sans-serif;font-weight:500;fill:#9A988F}
+    </style>
+  </defs>
+  <!-- mountain mark -->
+  <path d="M10 86 L34 34 L48 56 L64 26 L92 86 Z" fill="#16161A"/>
+  <path d="M64 26 L72 38 L66 46 L58 40 Z" fill="#EDEBE5"/>
+  <!-- wordmark -->
+  <text class="wm" x="116" y="62" font-size="38" letter-spacing="7">SOUTH END</text>
+  <text class="tg" x="118" y="86" font-size="12" letter-spacing="6">ADVENTURES</text>
+</svg>
