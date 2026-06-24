@@ -43,7 +43,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 
 /* HERO */
 .hero{height:100vh;min-height:620px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
-.hero-motion{position:absolute;inset:-6%;background:url('https://commons.wikimedia.org/wiki/Special:FilePath/Gr%C3%B6dner_Dolomiten_Seiser-Alm_Hi_res.jpg?width=2200') center/cover;animation:kenburns 30s ease-in-out infinite alternate;filter:grayscale(6%) contrast(1.02)}
+.hero-motion{position:absolute;inset:-6%;background:url('https://commons.wikimedia.org/wiki/Special:FilePath/Gr%C3%B6dner_Dolomiten_Seiser-Alm_Hi_res.jpg?width=2200') center/cover;animation:kenburns 30s ease-in-out infinite alternate;filter:saturate(0.85) contrast(1.07) brightness(0.93) sepia(0.1)}
 @keyframes kenburns{0%{transform:scale(1.06) translate(2%,1%)}100%{transform:scale(1.16) translate(-2%,-1.5%)}}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,22,26,0.36) 0%,rgba(22,22,26,0.08) 38%,rgba(22,22,26,0.62) 100%)}
 .hero-body{position:relative;z-index:3;padding:0 48px 60px;color:var(--paper)}
@@ -64,7 +64,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 /* SPLIT PATHS */
 .paths{display:grid;grid-template-columns:1fr 1fr}
 .path{position:relative;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;min-height:78vh;padding:48px;color:var(--paper)}
-.path-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1s ease;filter:grayscale(10%) brightness(0.78)}
+.path-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1s ease;filter:saturate(0.85) contrast(1.06) brightness(0.74) sepia(0.1)}
 .path-run .path-img{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Seceda_2.jpg?width=1600')}
 .path-ride .path-img{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Il_Passo_dello_Stelvio.jpg?width=1600')}
 .path::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,22,26,0.15) 0%,rgba(22,22,26,0.2) 50%,rgba(22,22,26,0.72) 100%)}
@@ -89,7 +89,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 
 /* JOIN */
 .join{position:relative;overflow:hidden;padding:110px 48px;color:var(--paper)}
-.join-motion{position:absolute;inset:-6%;background:url('https://commons.wikimedia.org/wiki/Special:FilePath/Seceda_2.jpg?width=2000') center/cover;animation:kenburns 34s ease-in-out infinite alternate;filter:grayscale(20%) brightness(0.45)}
+.join-motion{position:absolute;inset:-6%;background:url('https://commons.wikimedia.org/wiki/Special:FilePath/Seceda_2.jpg?width=2000') center/cover;animation:kenburns 34s ease-in-out infinite alternate;filter:saturate(0.72) contrast(1.04) brightness(0.42) sepia(0.12)}
 .join::after{content:'';position:absolute;inset:0;background:rgba(22,22,26,0.55)}
 .join-inner{position:relative;z-index:3;max-width:620px;margin:0 auto;text-align:center}
 .join-tag{font-family:'Schibsted Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:rgba(237,235,229,0.8);margin-bottom:20px;display:block}
@@ -117,7 +117,7 @@ footer{padding:60px 48px;display:flex;justify-content:space-between;align-items:
   .cal-strip,.join,footer{padding-left:22px;padding-right:22px}
   .ft-meta{text-align:left}
 }
-.nav-mark{display:inline-flex;align-items:center;gap:9px}.nav-ico{flex-shrink:0}</style>
+.nav-mark{display:inline-flex;align-items:center;gap:9px}.nav-ico{flex-shrink:0}.hero-motion::before,.band-motion::before,.stage-photo::before,.path-img::before,.join-motion::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:0.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:220px}</style>
 </head>
 <body>
 

@@ -37,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 
 /* HERO */
 .hero{height:88vh;min-height:560px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
-.hero-motion{position:absolute;inset:-6%;background:url('https://commons.wikimedia.org/wiki/Special:FilePath/Seceda_2.jpg?width=2200') center/cover;animation:kb 30s ease-in-out infinite alternate;filter:grayscale(6%) contrast(1.02)}
+.hero-motion{position:absolute;inset:-6%;background:url('https://commons.wikimedia.org/wiki/Special:FilePath/Seceda_2.jpg?width=2200') center/cover;animation:kb 30s ease-in-out infinite alternate;filter:saturate(0.85) contrast(1.07) brightness(0.93) sepia(0.1)}
 @keyframes kb{0%{transform:scale(1.06) translate(2%,1%)}100%{transform:scale(1.16) translate(-2%,-1.5%)}}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,22,26,0.34) 0%,rgba(22,22,26,0.06) 40%,rgba(22,22,26,0.6) 100%)}
 .hero-body{position:relative;z-index:3;padding:0 48px 56px;color:var(--paper)}
@@ -63,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .stages{display:grid;gap:2px;background:var(--line-soft)}
 .stage{background:var(--paper);border:1px solid var(--line);overflow:hidden}
 .stage-grid{display:grid;grid-template-columns:1.05fr 1fr}
-.stage-photo{position:relative;min-height:360px;background-size:cover;background-position:center;filter:grayscale(8%)}
+.stage-photo{position:relative;min-height:360px;background-size:cover;background-position:center;filter:saturate(0.88) contrast(1.05) sepia(0.09)}
 .stage-photo-cap{position:absolute;bottom:14px;left:16px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;background:rgba(22,22,26,0.55);padding:5px 10px}
 .stage-info{padding:42px 44px}
 .stage-idx{font-family:'Schibsted Grotesk',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--clay);margin-bottom:12px;display:block}
@@ -87,7 +87,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 
 /* CINEMATIC BANDS */
 .band{position:relative;height:70vh;min-height:420px;overflow:hidden;display:flex;align-items:flex-end}
-.band-motion{position:absolute;inset:-6%;background-size:cover;background-position:center;animation:kb 32s ease-in-out infinite alternate;filter:grayscale(10%)}
+.band-motion{position:absolute;inset:-6%;background-size:cover;background-position:center;animation:kb 32s ease-in-out infinite alternate;filter:saturate(0.85) contrast(1.06) brightness(0.92) sepia(0.1)}
 .band::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,22,26,0.15),rgba(22,22,26,0.62))}
 .band-text{position:relative;z-index:2;padding:0 48px 50px;color:var(--paper);max-width:900px}
 .band-q{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.8rem);line-height:1.05;letter-spacing:-0.01em}
@@ -126,7 +126,7 @@ footer a{color:var(--clay);text-decoration:none}
   .band-text{padding:0 22px 40px}
   .next{padding:44px 22px}
 }
-.nav-mark{display:inline-flex;align-items:center;gap:9px}.nav-ico{flex-shrink:0}</style>
+.nav-mark{display:inline-flex;align-items:center;gap:9px}.nav-ico{flex-shrink:0}.hero-motion::before,.band-motion::before,.stage-photo::before,.path-img::before,.join-motion::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:0.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:220px}</style>
 </head>
 <body>
 
