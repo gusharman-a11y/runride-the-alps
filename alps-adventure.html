@@ -109,6 +109,8 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .join-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.45em;text-transform:uppercase;color:var(--run);display:block;margin-bottom:22px}
 .join-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.6rem,6vw,5rem);font-weight:700;text-transform:uppercase;line-height:0.95;color:var(--snow);margin-bottom:24px}
 .join-desc{font-size:16px;color:rgba(237,232,220,0.7);line-height:1.8;max-width:560px;margin:0 auto 40px}
+.join-form{background:#fff;padding:30px 30px 16px;max-width:560px;margin:0 auto 28px;text-align:left}
+.join-form iframe{display:block;width:100%;min-height:260px}
 .join-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .join-btn-primary{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;text-decoration:none;color:#060605;background:var(--run);padding:20px 46px;display:inline-flex;align-items:center;gap:12px;transition:gap .2s,opacity .2s}
 .join-btn-primary:hover{gap:18px;opacity:0.9}
@@ -226,8 +228,10 @@ footer{padding:70px 56px;border-top:1px solid var(--border);display:flex;justify
     <span class="join-label">South End · Adventures</span>
     <h2 class="join-title">Want to do this trip?</h2>
     <p class="join-desc">We're opening this adventure up beyond our own crew. Register your interest and we'll be in touch with dates, pricing and how to join the next departure.</p>
+    <div class="join-form">
+      <iframe data-tally-src="https://tally.so/embed/6840NJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="280" frameborder="0" marginheight="0" marginwidth="0" title="Register your interest — South End"></iframe>
+    </div>
     <div class="join-actions">
-      <a href="https://tally.so/r/YOUR_FORM_ID" class="join-btn-primary" target="_blank" rel="noopener">Register your interest →</a>
       <a href="https://instagram.com/thesouthend.co" class="join-btn-ghost" target="_blank" rel="noopener">Follow on Instagram ↗</a>
     </div>
   </div>
@@ -242,6 +246,9 @@ footer{padding:70px 56px;border-top:1px solid var(--border);display:flex;justify
   </div>
 </footer>
 
+<script>
+(function(){var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})};if("undefined"!=typeof Tally)v();else if(null==d.querySelector('script[src="'+w+'"]')){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}})();
+</script>
 <script>
 const d=document.getElementById('cur-d'),r=document.getElementById('cur-r');
 let mx=0,my=0,rx=0,ry=0;
