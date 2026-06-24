@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South End — Brand Guide</title>
+<link rel="canonical" href="https://gusharman-a11y.github.io/runride-the-alps/brand-guide.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='9' fill='%23EDEBE5'/%3E%3Cpath d='M5 40 17 15 24 25 31 11 43 40 Z' fill='%2316161A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#16161A;--paper:#EDEBE5;--paper-2:#E4E1D8;--stone:#9A988F;--line:rgba(22,22,26,0.14);--clay:#B5613D;--run:#3A6B5C}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.7}
+.disp{font-family:'Schibsted Grotesk',sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:0 40px}
+
+.cover{padding:90px 0 60px;border-bottom:1px solid var(--line)}
+.cover .mark{margin-bottom:30px}
+.kicker{font-family:'Schibsted Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.4em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:16px}
+.cover h1{font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:clamp(2.8rem,7vw,5rem);line-height:0.92;letter-spacing:-0.025em;margin-bottom:18px}
+.cover p{font-size:16px;color:#46443e;max-width:560px}
+
+section{padding:60px 0;border-bottom:1px solid var(--line)}
+.s-num{font-family:'Schibsted Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--clay);display:block;margin-bottom:14px}
+h2{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-0.015em;margin-bottom:24px}
+h3{font-family:'Schibsted Grotesk',sans-serif;font-weight:500;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);margin:28px 0 12px}
+p{margin-bottom:14px;max-width:620px}
+b{font-weight:500}
+
+.palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:10px}
+.sw{border:1px solid var(--line)}
+.sw-c{height:96px}
+.sw-meta{padding:12px 14px;background:var(--paper)}
+.sw-name{font-family:'Schibsted Grotesk',sans-serif;font-weight:500;font-size:14px;display:block}
+.sw-hex{font-size:12px;color:var(--stone);margin-top:3px}
+.sw-use{font-size:11px;color:var(--stone);margin-top:6px;line-height:1.4}
+
+.type-sample{border:1px solid var(--line);padding:28px 30px;margin-top:14px;background:var(--paper)}
+.type-d{font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:2.4rem;line-height:1;letter-spacing:-0.02em;margin-bottom:6px}
+.type-meta{font-size:12px;color:var(--stone);letter-spacing:0.06em}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:8px}
+.do h3{color:var(--run)}.dont h3{color:var(--clay)}
+ul{list-style:none;display:grid;gap:8px}
+li{font-size:14px;color:#46443e;padding-left:16px;position:relative;line-height:1.5}
+li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;background:var(--stone)}
+.voice-ex{font-family:'Schibsted Grotesk',sans-serif;font-weight:500;font-size:1.15rem;line-height:1.5;color:var(--ink);border-left:2px solid var(--clay);padding-left:18px;margin:8px 0 18px}
+
+.kit{background:var(--ink);color:var(--paper);padding:32px 34px;margin-top:14px;font-family:'Inter',sans-serif}
+.kit h3{color:var(--stone);margin-top:0}
+.kit-row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid rgba(237,235,229,0.12);font-size:14px}
+.kit-row:last-child{border-bottom:none}
+.kit-row span:first-child{color:rgba(237,235,229,0.6)}
+.kit-row span:last-child{font-family:'Schibsted Grotesk',sans-serif;font-weight:500;text-align:right}
+
+footer{padding:40px 0 70px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--stone)}
+@media(max-width:680px){.wrap{padding:0 22px}.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <svg class="mark" width="200" height="60" viewBox="0 0 400 120">
+      <path d="M10 86 L34 34 L48 56 L64 26 L92 86 Z" fill="#16161A"/>
+      <path d="M64 26 L72 38 L66 46 L58 40 Z" fill="#EDEBE5"/>
+      <text x="116" y="62" font-size="38" letter-spacing="7" font-family="'Schibsted Grotesk',sans-serif" font-weight="700" fill="#16161A">SOUTH END</text>
+      <text x="118" y="86" font-size="12" letter-spacing="6" font-family="'Schibsted Grotesk',sans-serif" font-weight="500" fill="#9A988F">ADVENTURES</text>
+    </svg>
+    <span class="kicker">Brand Guide · v1</span>
+    <h1>The single source<br>of truth.</h1>
+    <p>Everything South End looks like, sounds like and says. Link any tool, freelancer or AI to this page to keep it all consistent.</p>
+  </div>
+
+  <section>
+    <span class="s-num">01 — Brand</span>
+    <h2>Who we are</h2>
+    <p><b>South End</b> creates small-group endurance adventures — trail running and cycling trips in the Alps and beyond. Hard, beautiful, and deliberately small. No coaches, no crowds.</p>
+    <p><b>Positioning:</b> the trips we wanted to do and couldn't book anywhere. <b>Promise:</b> earn the view. <b>Tagline:</b> <i>Earn the view.</i></p>
+  </section>
+
+  <section>
+    <span class="s-num">02 — Logo</span>
+    <h2>The mark</h2>
+    <p>A minimal mountain peak. Use the full lockup where there's room; the mark alone for avatars, favicons and small spaces. Keep clear space around it equal to the height of the peak. Never stretch, recolour outside the palette, or add effects.</p>
+    <h3>Files</h3>
+    <p style="font-size:14px"><b>southend-logo.svg</b> — full lockup · <b>southend-profile.svg / .png</b> — square avatar (Instagram) · favicon is built in.</p>
+  </section>
+
+  <section>
+    <span class="s-num">03 — Colour</span>
+    <h2>Palette</h2>
+    <p>Near-monochrome. The photography carries the colour — the brand stays out of its way. Clay is the single accent, used sparingly.</p>
+    <div class="palette">
+      <div class="sw"><div class="sw-c" style="background:#16161A"></div><div class="sw-meta"><span class="sw-name">Ink</span><div class="sw-hex">#16161A</div><div class="sw-use">Text, dark sections, buttons</div></div></div>
+      <div class="sw"><div class="sw-c" style="background:#EDEBE5"></div><div class="sw-meta"><span class="sw-name">Bone</span><div class="sw-hex">#EDEBE5</div><div class="sw-use">Backgrounds, light text on dark</div></div></div>
+      <div class="sw"><div class="sw-c" style="background:#9A988F"></div><div class="sw-meta"><span class="sw-name">Stone</span><div class="sw-hex">#9A988F</div><div class="sw-use">Labels, captions, muted text</div></div></div>
+      <div class="sw"><div class="sw-c" style="background:#B5613D"></div><div class="sw-meta"><span class="sw-name">Clay</span><div class="sw-hex">#B5613D</div><div class="sw-use">Accent only — links, highlights</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="s-num">04 — Type</span>
+    <h2>Typography</h2>
+    <div class="type-sample">
+      <div class="type-d">Run.Ride the Alps</div>
+      <div class="type-meta">SCHIBSTED GROTESK · 700/800 — headlines, wordmark, stats</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:1.05rem;line-height:1.7;margin-bottom:6px">Four days, hut to hut, across the heart of the Dolomites.</div>
+      <div class="type-meta">INTER · 300/400 — body copy</div>
+    </div>
+    <p style="margin-top:18px;font-size:14px">Tight letter-spacing on big type, generous line-height on small. Sentence case or ALL CAPS labels. Two families only. Both free on Google Fonts.</p>
+  </section>
+
+  <section>
+    <span class="s-num">05 — Voice</span>
+    <h2>How we sound</h2>
+    <p>Confident, dry, minimal. Short sentences. Let the mountains do the shouting.</p>
+    <div class="voice-ex">"Some trips you book. This one, you earn."</div>
+    <div class="cols">
+      <div class="do"><h3>Do</h3><ul>
+        <li>Short, declarative sentences</li>
+        <li>Specifics — numbers, places, distances</li>
+        <li>Understatement over hype</li>
+        <li>Let white space and photos breathe</li>
+      </ul></div>
+      <div class="dont"><h3>Avoid</h3><ul>
+        <li>"Epic", "amazing", "bucket list", "once in a lifetime"</li>
+        <li>Exclamation marks</li>
+        <li>Corporate tour-operator speak</li>
+        <li>Over-explaining — say less</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="s-num">06 — Photography</span>
+    <h2>Imagery</h2>
+    <p>Big, full-bleed, slightly desaturated. Mountains, movement, scale. People small in the landscape, not posed. Often moving — slow pans or video. The image is the hero; type sits quietly on top.</p>
+  </section>
+
+  <section>
+    <span class="s-num">07 — Sound &amp; voiceover</span>
+    <h2>How we sound (literally)</h2>
+    <p>For Reels and films, keep the audio identity as consistent as the visual one. Always use the <b>same ElevenLabs voice</b> — that fixed voice becomes South End's sound.</p>
+    <h3>ElevenLabs voiceover spec</h3>
+    <div class="kit">
+      <div class="kit-row"><span>Voice</span><span>Calm British — e.g. Daniel / George</span></div>
+      <div class="kit-row"><span>Model</span><span>Multilingual v2</span></div>
+      <div class="kit-row"><span>Stability</span><span>~50%</span></div>
+      <div class="kit-row"><span>Similarity</span><span>~75%</span></div>
+      <div class="kit-row"><span>Style</span><span>Low</span></div>
+      <div class="kit-row"><span>Pace</span><span>Slow, cinematic — use line breaks for pauses</span></div>
+    </div>
+    <h3>Music prompt (ElevenLabs Music)</h3>
+    <p style="font-size:14px;color:#46443e">"Slow-building cinematic ambient track, sparse piano and deep strings, restrained and epic, building to a quiet climax. No drums until the final 10 seconds."</p>
+  </section>
+
+  <section>
+    <span class="s-num">08 — Brand kit</span>
+    <h2>Copy-paste into Canva / CapCut</h2>
+    <p>Paste these into your tool's Brand Kit (Canva Brand Hub / CapCut Brand Kit) so every graphic and reel auto-matches.</p>
+    <div class="kit">
+      <div class="kit-row"><span>Colours</span><span>#16161A · #EDEBE5 · #9A988F · #B5613D</span></div>
+      <div class="kit-row"><span>Display font</span><span>Schibsted Grotesk (700/800)</span></div>
+      <div class="kit-row"><span>Body font</span><span>Inter (300/400)</span></div>
+      <div class="kit-row"><span>Logo</span><span>southend-logo.svg / -profile.png</span></div>
+      <div class="kit-row"><span>Tagline</span><span>Earn the view.</span></div>
+      <div class="kit-row"><span>Handle</span><span>@thesouthend.co</span></div>
+    </div>
+  </section>
+
+  <footer>South End · Brand Guide v1 · Earn the view.</footer>
+
+</div>
+</body>
+</html>
