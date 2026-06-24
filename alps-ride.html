@@ -6,7 +6,7 @@
 <title>The Ride — Dolomites to Alpe d'Huez | Run.Ride the Alps</title>
 <meta name="description" content="A road cycling traverse from the Dolomites to the French Alps — the Stelvio, the Gavia, Lake Como and the Lautaret — finishing at the foot of Alpe d'Huez for the Tour de France. By South End.">
 <link rel="canonical" href="https://gusharman-a11y.github.io/runride-the-alps/alps-ride.html">
-<meta name="theme-color" content="#060605">
+<meta name="theme-color" content="#16161A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%B0%EF%B8%8F%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="South End">
@@ -18,307 +18,267 @@
 <meta name="twitter:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Il_Passo_dello_Stelvio.jpg?width=1200">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Barlow+Condensed:wght@300;400;600;700&family=Inter:wght@300;400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#060605;--surface:#0C0B09;--card:#111009;
-  --snow:#EDE8DC;--snow-dim:rgba(237,232,220,0.42);--snow-ghost:rgba(237,232,220,0.10);
-  --border:rgba(237,232,220,0.07);--border-mid:rgba(237,232,220,0.14);
-  --ride:#FF4E1A;--ride-bg:rgba(255,78,26,0.08);--ride-border:rgba(255,78,26,0.25);
-  --gold:#F5C842;--gold-bg:rgba(245,200,66,0.07);--gold-border:rgba(245,200,66,0.22);
-  --warn:#FF9A3C;
+  --ink:#16161A;--paper:#EDEBE5;--paper-2:#E4E1D8;--stone:#9A988F;
+  --line:rgba(22,22,26,0.13);--line-soft:rgba(22,22,26,0.07);--clay:#B5613D;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--snow);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
-#cur-d,#cur-r{position:fixed;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%)}
-#cur-d{width:5px;height:5px;background:var(--snow)}
-#cur-r{width:38px;height:38px;border:1px solid rgba(237,232,220,0.25);transition:all .14s ease}
-body:has(a:hover) #cur-r{transform:translate(-50%,-50%) scale(1.7);border-color:var(--ride)}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 56px;display:flex;justify-content:space-between;align-items:center}
-nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,6,5,0.85) 0%,transparent 100%);pointer-events:none}
-.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--snow);text-decoration:none;position:relative;z-index:1}
-.nav-links{display:flex;gap:36px;list-style:none;position:relative;z-index:1}
-.nav-links a{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--snow-dim);text-decoration:none;transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--ride)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;mix-blend-mode:difference}
+.nav-mark{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.3em;text-transform:uppercase;color:#fff;text-decoration:none}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;text-decoration:none;opacity:0.85;transition:opacity .2s}
+.nav-links a:hover{opacity:0.5}
 
-.hero{height:90vh;min-height:560px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
-.hero-img{position:absolute;inset:0;background:url('https://commons.wikimedia.org/wiki/Special:FilePath/Il_Passo_dello_Stelvio.jpg?width=2000') center/cover;filter:brightness(0.55) saturate(0.95)}
-.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,5,0.97) 0%,rgba(6,6,5,0.45) 40%,rgba(6,6,5,0.2) 100%)}
-.hero-top-line{position:absolute;top:0;left:0;right:0;height:4px;background:var(--ride);z-index:3}
-.hero-content{position:relative;z-index:4;padding:0 56px 64px}
-.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.45em;text-transform:uppercase;color:var(--ride);margin-bottom:18px;display:block}
-.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(4rem,11vw,11rem);font-weight:700;text-transform:uppercase;line-height:0.85;color:var(--snow);margin-bottom:22px}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2vw,1.6rem);color:rgba(237,232,220,0.75);max-width:680px;line-height:1.5}
+.hero{height:88vh;min-height:560px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-motion{position:absolute;inset:-6%;background:url('https://commons.wikimedia.org/wiki/Special:FilePath/Il_Passo_dello_Stelvio.jpg?width=2200') center/cover;animation:kb 30s ease-in-out infinite alternate;filter:grayscale(6%) contrast(1.02)}
+@keyframes kb{0%{transform:scale(1.06) translate(2%,1%)}100%{transform:scale(1.16) translate(-2%,-1.5%)}}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,22,26,0.34) 0%,rgba(22,22,26,0.06) 40%,rgba(22,22,26,0.6) 100%)}
+.hero-body{position:relative;z-index:3;padding:0 48px 56px;color:var(--paper)}
+.hb-eyebrow{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(237,235,229,0.85);margin-bottom:20px;display:block}
+.hb-title{font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:clamp(3.2rem,10vw,9rem);line-height:0.88;letter-spacing:-0.025em;margin-bottom:24px}
+.hb-sub{font-size:15px;line-height:1.6;max-width:680px;color:rgba(237,235,229,0.9)}
 
-.stat-band{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--border)}
-.sb-item{flex:1;min-width:140px;padding:32px 36px;border-right:1px solid var(--border)}
-.sb-item:last-child{border-right:none}
-.sb-val{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:600;color:var(--ride);display:block;line-height:1;margin-bottom:6px}
-.sb-lbl{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--snow-dim)}
+.stats{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.stat{flex:1;min-width:140px;padding:30px 36px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat-val{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:2rem;line-height:1;letter-spacing:-0.01em;margin-bottom:7px;display:block}
+.stat-lbl{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone)}
 
-.sec{padding:90px 56px;max-width:1360px;margin:0 auto}
-.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.45em;text-transform:uppercase;color:var(--ride);display:block;margin-bottom:18px}
-.sec-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:700;text-transform:uppercase;line-height:0.95;color:var(--snow);margin-bottom:26px}
+.sec{max-width:1180px;margin:0 auto;padding:90px 48px}
+.sec-tag{font-family:'Schibsted Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--stone);margin-bottom:16px;display:block}
+.sec-h{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:clamp(2rem,4.5vw,3.4rem);line-height:0.98;letter-spacing:-0.015em;margin-bottom:30px}
+.route-prose{font-size:clamp(1.05rem,1.7vw,1.4rem);font-weight:300;color:var(--ink);line-height:1.7;max-width:920px;margin-bottom:14px}
+.route-prose b{font-weight:500}
+.route-note{font-size:13px;color:var(--stone);letter-spacing:0.04em}
 
-.route-prose{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,1.8vw,1.55rem);font-weight:300;font-style:italic;color:var(--snow-dim);line-height:1.75;max-width:900px;margin-bottom:36px}
-.route-prose strong{font-style:normal;color:var(--snow);font-weight:400}
-.komoot-full{width:100%;height:500px;border:1px solid var(--border-mid);display:block}
-
-.stages{display:grid;gap:48px;margin-top:20px}
-.stage{background:var(--card);border:1px solid var(--border);overflow:hidden;position:relative}
-.stage::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ride);z-index:2}
-.stage-grid{display:grid;grid-template-columns:1fr 1fr}
+.stages{display:grid;gap:2px;background:var(--line-soft)}
+.stage{background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.stage-grid{display:grid;grid-template-columns:1.05fr 1fr}
 .stage-grid.flip .stage-photo{order:2}
-.stage-photo{position:relative;min-height:340px;background-size:cover;background-position:center;filter:saturate(0.92)}
-.stage-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(17,16,9,0.9) 100%)}
-.stage-grid.flip .stage-photo::after{background:linear-gradient(to left,transparent 60%,rgba(17,16,9,0.9) 100%)}
-.stage-photo-caption{position:absolute;bottom:16px;left:18px;z-index:2;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(237,232,220,0.7);background:rgba(6,6,5,0.5);padding:5px 10px}
-.stage-info{padding:40px}
-.stage-num-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.38em;text-transform:uppercase;color:var(--snow-dim);margin-bottom:10px;display:block}
-.stage-name{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;text-transform:uppercase;color:var(--snow);line-height:1;margin-bottom:22px}
-.stage-nums{display:flex;gap:26px;margin-bottom:24px;flex-wrap:wrap}
-.sn-lbl{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--snow-dim);display:block;margin-bottom:4px}
-.sn-val{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:600;color:var(--ride);line-height:1}
-.stage-route-chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:var(--snow-dim);margin-bottom:22px;line-height:1.5}
-.rch-sep{color:var(--border-mid);font-size:10px}
-.stage-night-pill{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:9px 16px;border:1px solid var(--ride-border);background:var(--ride-bg);color:var(--ride);margin-bottom:18px}
-.night-tag{opacity:0.55;font-size:9px;letter-spacing:0.25em}
-.stage-detail{font-size:13px;color:var(--snow-dim);line-height:1.7;margin-bottom:14px}
-.stage-detail strong{color:var(--snow);font-weight:400;display:block;margin-bottom:3px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:0.06em;text-transform:uppercase}
-.stage-map-row{border-top:1px solid var(--border)}
-.komoot-frame{width:100%;height:380px;border:none;display:block}
-.map-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--snow-dim);padding:16px 40px 6px;display:block;border-top:1px solid var(--border)}
+.stage-photo{position:relative;min-height:360px;background-size:cover;background-position:center;filter:grayscale(8%)}
+.stage-photo-cap{position:absolute;bottom:14px;left:16px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;background:rgba(22,22,26,0.55);padding:5px 10px}
+.stage-info{padding:42px 44px}
+.stage-idx{font-family:'Schibsted Grotesk',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--clay);margin-bottom:12px;display:block}
+.stage-name{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1;letter-spacing:-0.01em;margin-bottom:24px}
+.stage-nums{display:flex;gap:28px;margin-bottom:24px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.sn-lbl{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:5px}
+.sn-val{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:1.4rem;line-height:1}
+.stage-chain{display:flex;flex-wrap:wrap;align-items:center;gap:7px;font-size:12px;color:var(--stone);margin-bottom:22px;line-height:1.5}
+.chain-sep{color:var(--line);font-size:10px}
+.stage-pill{display:inline-flex;align-items:center;gap:10px;font-family:'Schibsted Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:9px 16px;background:var(--ink);color:var(--paper);margin-bottom:18px}
+.pill-tag{opacity:0.55;font-size:9px;letter-spacing:0.2em}
+.stage-detail{font-size:13px;color:#46443e;line-height:1.7;margin-bottom:14px}
+.stage-detail b{font-family:'Schibsted Grotesk',sans-serif;font-weight:500;color:var(--ink);display:block;margin-bottom:3px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase}
+.map-label{font-family:'Schibsted Grotesk',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);padding:16px 44px 4px;display:block;border-top:1px solid var(--line)}
 .map-label:first-child{border-top:none}
-.map-note{font-size:12px;color:var(--snow-dim);line-height:1.6;padding:16px 40px;border-top:1px solid var(--border)}
-.map-note strong{color:var(--ride);font-weight:400}
-.komoot-ext{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--snow-dim);text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:18px 40px;transition:color .2s}
-.komoot-ext:hover{color:var(--ride)}
+.map-note{font-size:12px;color:#46443e;line-height:1.6;padding:14px 44px;border-top:1px solid var(--line)}
+.map-note b{color:var(--clay);font-weight:500}
+.komoot-frame{width:100%;height:400px;border:none;display:block;background:var(--paper-2)}
+.komoot-ext{font-family:'Schibsted Grotesk',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--stone);text-decoration:none;display:inline-flex;gap:6px;padding:18px 44px;transition:color .2s}
+.komoot-ext:hover{color:var(--clay)}
 
-.logistics{padding:0 56px 90px;max-width:1360px;margin:0 auto}
-.log-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:28px}
-.log-card{background:var(--card);padding:28px 30px}
-.log-card h4{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.38em;text-transform:uppercase;color:var(--snow-dim);margin-bottom:18px}
-.log-card ul{list-style:none;display:grid;gap:9px}
-.log-card li{font-size:13px;color:var(--snow-dim);padding-left:14px;position:relative;line-height:1.55}
-.log-card li::before{content:'›';position:absolute;left:0;color:var(--ride);font-size:14px}
+.band{position:relative;height:70vh;min-height:420px;overflow:hidden;display:flex;align-items:flex-end}
+.band-motion{position:absolute;inset:-6%;background-size:cover;background-position:center;animation:kb 32s ease-in-out infinite alternate;filter:grayscale(10%)}
+.band::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,22,26,0.15),rgba(22,22,26,0.62))}
+.band-text{position:relative;z-index:2;padding:0 48px 50px;color:var(--paper);max-width:900px}
+.band-q{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.8rem);line-height:1.05;letter-spacing:-0.01em}
+.band-c{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(237,235,229,0.7);margin-top:14px}
 
-.next-band{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;padding:64px 56px;border-top:1px solid var(--border)}
+.logi{max-width:1180px;margin:0 auto;padding:0 48px 90px}
+.logi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:26px}
+.logi-card{background:var(--paper);padding:28px 30px}
+.logi-card h4{font-family:'Schibsted Grotesk',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--clay);margin-bottom:16px}
+.logi-card ul{list-style:none;display:grid;gap:9px}
+.logi-card li{font-size:13px;color:#46443e;padding-left:14px;position:relative;line-height:1.55}
+.logi-card li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--stone)}
+
+.next{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;padding:60px 48px;border-top:1px solid var(--line)}
+.next-back{font-family:'Schibsted Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--stone);text-decoration:none}
+.next-back:hover{color:var(--ink)}
 .next-link{text-decoration:none}
-.next-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;color:var(--snow-dim);display:block;margin-bottom:8px}
-.next-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;text-transform:uppercase;color:var(--snow);line-height:0.95;transition:color .2s}
-.next-link:hover .next-title{color:#00E8B0}
-.next-back{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--snow-dim);text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:color .2s}
-.next-back:hover{color:var(--snow)}
+.next-tag{font-family:'Schibsted Grotesk',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:6px}
+.next-title{font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:clamp(1.8rem,4vw,2.8rem);line-height:0.95;letter-spacing:-0.02em}
 
-footer{padding:50px 56px;border-top:1px solid var(--border);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--snow-dim);opacity:0.4;text-align:center}
+footer{padding:46px 48px;border-top:1px solid var(--line);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--stone);text-align:center}
+footer a{color:var(--clay);text-decoration:none}
 
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
 .reveal.in{opacity:1;transform:none}
 
-@media(max-width:900px){
-  nav{padding:18px 22px}
-  .nav-links{gap:20px}
-  .hero-content{padding:0 22px 44px}
-  .sec,.logistics{padding-left:22px;padding-right:22px}
-  .sec{padding-top:64px;padding-bottom:64px}
-  .stage-grid{grid-template-columns:1fr}
-  .stage-grid.flip .stage-photo{order:0}
-  .stage-photo{min-height:220px}
-  .stage-photo::after,.stage-grid.flip .stage-photo::after{background:linear-gradient(to bottom,transparent 50%,rgba(17,16,9,0.95) 100%)}
-  .stage-info{padding:28px 24px}
-  .next-band{padding:48px 22px}
+@media(max-width:820px){
+  nav{padding:16px 20px}.nav-links{gap:16px}
+  .hero-body{padding:0 22px 40px}
+  .stat{min-width:50%;border-bottom:1px solid var(--line)}
+  .sec,.logi{padding:60px 22px}
+  .stage-grid{grid-template-columns:1fr}.stage-grid.flip .stage-photo{order:0}.stage-photo{min-height:240px}
+  .stage-info{padding:30px 24px}
+  .map-label,.map-note,.komoot-ext{padding-left:24px;padding-right:24px}
+  .band-text{padding:0 22px 40px}
+  .next{padding:44px 22px}
 }
 </style>
 </head>
 <body>
-<div id="cur-d"></div><div id="cur-r"></div>
 
 <nav>
-  <a href="alps-adventure.html" class="nav-logo">Run.Ride the Alps</a>
+  <a href="alps-adventure.html" class="nav-mark">South End</a>
   <ul class="nav-links">
     <li><a href="alps-run.html">The Run</a></li>
-    <li><a href="alps-ride.html" class="active">The Ride</a></li>
+    <li><a href="alps-ride.html">The Ride</a></li>
     <li><a href="alps-calendar.html">Calendar</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <div class="hero-top-line"></div>
-  <div class="hero-img"></div>
-  <div class="hero-content">
-    <span class="hero-eyebrow">Part Two · Dolomites → Alpe d'Huez · 18–23 July 2026</span>
-    <h1 class="hero-title">The Ride</h1>
-    <p class="hero-sub">A road cycling traverse from the Dolomites to the French Alps — the Stelvio, the Gavia, Lake Como, the Lautaret — finishing at the foot of Alpe d'Huez for the Tour de France.</p>
+  <div class="hero-motion"></div>
+  <div class="hero-body">
+    <span class="hb-eyebrow">Part Two · Dolomites → Alpe d'Huez · 18–23 July 2026</span>
+    <h1 class="hb-title">The Ride</h1>
+    <p class="hb-sub">A road cycling traverse from the Dolomites to the French Alps — the Stelvio, the Gavia, Lake Como, the Lautaret — finishing at the foot of Alpe d'Huez for the Tour de France.</p>
   </div>
 </section>
 
-<div class="stat-band">
-  <div class="sb-item"><span class="sb-val">~236km</span><span class="sb-lbl">Riding distance</span></div>
-  <div class="sb-item"><span class="sb-val">~+7,450m</span><span class="sb-lbl">Total ascent</span></div>
-  <div class="sb-item"><span class="sb-val">5 stages</span><span class="sb-lbl">Dolomites → Alps</span></div>
-  <div class="sb-item"><span class="sb-val">2,758m</span><span class="sb-lbl">Stelvio summit</span></div>
-  <div class="sb-item"><span class="sb-val">2,621m</span><span class="sb-lbl">Gavia summit</span></div>
+<div class="stats">
+  <div class="stat"><span class="stat-val">~236km</span><span class="stat-lbl">Riding distance</span></div>
+  <div class="stat"><span class="stat-val">~+7,450m</span><span class="stat-lbl">Total ascent</span></div>
+  <div class="stat"><span class="stat-val">2,758m</span><span class="stat-lbl">Stelvio summit</span></div>
+  <div class="stat"><span class="stat-val">2,621m</span><span class="stat-lbl">Gavia summit</span></div>
 </div>
 
 <!-- OVERVIEW -->
 <section class="sec reveal">
-  <span class="sec-label">The route</span>
+  <span class="sec-tag">The route</span>
   <h2 class="sec-h">Bolzano → Alpe d'Huez</h2>
-  <p class="route-prose">
-    <strong>Bolzano / Bozen</strong> → train → Merano → Vinschgau cycle path → Prato allo Stelvio → <strong>Stelvio (2,758m)</strong> → <strong>Bormio</strong> [rest] → Gavia (2,621m) → <strong>Lake Como</strong> [rest] → train → Oulx → Montgenèvre → <strong>Briançon</strong> → Lautaret → <strong>foot of Alpe d'Huez 🏁</strong>
-  </p>
-  <p style="font-size:13px;color:var(--snow-dim);letter-spacing:0.05em;">Each stage below has its own map. Scroll on for the day-by-day.</p>
+  <p class="route-prose"><b>Bolzano / Bozen</b> → train → Merano → Vinschgau cycle path → Prato allo Stelvio → <b>Stelvio (2,758m)</b> → <b>Bormio</b> [rest] → Gavia (2,621m) → <b>Lake Como</b> [rest] → train → Oulx → Montgenèvre → <b>Briançon</b> → Lautaret → <b>foot of Alpe d'Huez</b></p>
+  <p class="route-note">Each stage below has its own map.</p>
 </section>
 
-<!-- STAGES -->
-<section class="sec reveal" style="padding-top:0">
-  <span class="sec-label">Stage by stage</span>
-  <h2 class="sec-h">The traverse</h2>
+<!-- BAND -->
+<div class="band">
+  <div class="band-motion" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Il_Passo_dello_Stelvio.jpg?width=2200')"></div>
+  <div class="band-text">
+    <div class="band-q">48 hairpins to 2,758m. The Stelvio is the warm-up.</div>
+    <div class="band-c">Passo dello Stelvio · Stage 1</div>
+  </div>
+</div>
 
+<!-- STAGES -->
+<section class="sec reveal" style="padding-top:80px">
+  <span class="sec-tag">Stage by stage</span>
+  <h2 class="sec-h">The traverse</h2>
   <div class="stages">
 
-    <!-- Stage 1 — Stelvio -->
+    <!-- Stage 1 -->
     <div class="stage">
       <div class="stage-grid">
-        <div class="stage-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Il_Passo_dello_Stelvio.jpg?width=1400')">
-          <span class="stage-photo-caption">Passo dello Stelvio — 48 hairpins</span>
-        </div>
+        <div class="stage-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Il_Passo_dello_Stelvio.jpg?width=1400')"><span class="stage-photo-cap">Passo dello Stelvio</span></div>
         <div class="stage-info">
-          <span class="stage-num-tag">Ride Stage 1 · Saturday 18 July</span>
+          <span class="stage-idx">Ride Stage 1 · Saturday 18 July</span>
           <div class="stage-name">Bolzano → Stelvio → Bormio</div>
           <div class="stage-nums">
             <div><span class="sn-lbl">Distance</span><span class="sn-val">~96km</span></div>
             <div><span class="sn-lbl">Ascent</span><span class="sn-val">+2,560m</span></div>
             <div><span class="sn-lbl">Summit</span><span class="sn-val">2,758m</span></div>
           </div>
-          <div class="stage-route-chain">
-            <span>Bolzano</span><span class="rch-sep">›</span>
-            <span>train → Merano</span><span class="rch-sep">›</span>
-            <span>Vinschgau path</span><span class="rch-sep">›</span>
-            <span>Prato allo Stelvio</span><span class="rch-sep">›</span>
-            <span>48 hairpins ↑ 2,758m</span><span class="rch-sep">›</span>
-            <span>Bormio ↓</span>
-          </div>
-          <div class="stage-night-pill"><span class="night-tag">Night</span> Bormio</div>
-          <div class="stage-detail"><strong>Start: Bolzano Youth Hostel</strong>Bikes and cycling kit were dropped here on the way out to the run — collect them and roll out.</div>
-          <div class="stage-detail"><strong>Train</strong>Bolzano → Merano regional. Bikes OK — €7.50. Go early for bike spaces.</div>
-          <div class="stage-detail"><strong>Bag transfer</strong>Bormio Driver: Prato → Bormio. +39 328 7654951 · bormiodriver.com</div>
+          <div class="stage-chain"><span>Bolzano</span><span class="chain-sep">/</span><span>train → Merano</span><span class="chain-sep">/</span><span>Vinschgau path</span><span class="chain-sep">/</span><span>Prato allo Stelvio</span><span class="chain-sep">/</span><span>48 hairpins ↑ 2,758m</span><span class="chain-sep">/</span><span>Bormio ↓</span></div>
+          <div class="stage-pill"><span class="pill-tag">Night</span> Bormio</div>
+          <div class="stage-detail"><b>Start: Bolzano Youth Hostel</b>Bikes and cycling kit were dropped here on the way out to the run — collect them and roll out.</div>
+          <div class="stage-detail"><b>Train</b>Bolzano → Merano regional. Bikes OK — €7.50. Go early for bike spaces.</div>
+          <div class="stage-detail"><b>Bag transfer</b>Bormio Driver: Prato → Bormio. +39 328 7654951 · bormiodriver.com</div>
         </div>
       </div>
-      <div class="stage-map-row">
+      <div class="stage-map">
         <iframe class="komoot-frame" src="https://www.komoot.com/tour/3025274656/embed?profile=1" frameborder="0" scrolling="no" loading="lazy"></iframe>
         <a class="komoot-ext" href="https://www.komoot.com/tour/3025274656" target="_blank">Open on Komoot ↗</a>
       </div>
     </div>
 
-    <!-- Stage 2 — Bormio optional -->
+    <!-- Stage 2 -->
     <div class="stage">
       <div class="stage-grid flip">
-        <div class="stage-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lombardia_Passo_di_Gavia_Sud_01.jpg?width=1400')">
-          <span class="stage-photo-caption">Bormio's high passes</span>
-        </div>
+        <div class="stage-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lombardia_Passo_di_Gavia_Sud_01.jpg?width=1400')"><span class="stage-photo-cap">Bormio's high passes</span></div>
         <div class="stage-info">
-          <span class="stage-num-tag">Ride Stage 2 · Sunday 19 July · Optional</span>
+          <span class="stage-idx">Ride Stage 2 · Sunday 19 July · Optional</span>
           <div class="stage-name">Bormio — rest or a legend</div>
-          <div class="stage-night-pill"><span class="night-tag">Night</span> Bormio</div>
-          <div class="stage-detail"><strong>Option A — Recovery</strong>Bagni di Bormio thermal baths. Eat everything. Sleep.</div>
-          <div class="stage-detail"><strong>Option B — Mortirolo loop</strong>Mortirolo + Gavia out-and-back. 111km total for the brave.</div>
-          <a class="komoot-ext" style="padding:0;margin-top:8px" href="https://www.komoot.com/smarttour/e1185333103" target="_blank">Mortirolo + Gavia loop on Komoot ↗</a>
+          <div class="stage-pill"><span class="pill-tag">Night</span> Bormio</div>
+          <div class="stage-detail"><b>Option A — Recovery</b>Bagni di Bormio thermal baths. Eat everything. Sleep.</div>
+          <div class="stage-detail"><b>Option B — Mortirolo loop</b>Mortirolo + Gavia out-and-back. 111km total for the brave.</div>
+          <a class="komoot-ext" style="padding:0;margin-top:6px" href="https://www.komoot.com/smarttour/e1185333103" target="_blank">Mortirolo + Gavia loop on Komoot ↗</a>
         </div>
       </div>
     </div>
 
-    <!-- Stage 3 — Gavia + Como -->
+    <!-- Stage 3 -->
     <div class="stage">
       <div class="stage-grid">
-        <div class="stage-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lago_di_Como_panorama.jpg?width=1400')">
-          <span class="stage-photo-caption">Lake Como</span>
-        </div>
+        <div class="stage-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lago_di_Como_panorama.jpg?width=1400')"><span class="stage-photo-cap">Lake Como</span></div>
         <div class="stage-info">
-          <span class="stage-num-tag">Ride Stage 3 · Monday 20 July</span>
+          <span class="stage-idx">Ride Stage 3 · Monday 20 July</span>
           <div class="stage-name">Bormio → Gavia → Lake Como</div>
           <div class="stage-nums">
             <div><span class="sn-lbl">Riding</span><span class="sn-val">~55km</span></div>
             <div><span class="sn-lbl">Ascent</span><span class="sn-val">+1,400m</span></div>
             <div><span class="sn-lbl">Summit</span><span class="sn-val">2,621m</span></div>
           </div>
-          <div class="stage-route-chain">
-            <span>Bormio</span><span class="rch-sep">›</span>
-            <span>Santa Caterina</span><span class="rch-sep">›</span>
-            <span>Passo di Gavia (2,621m)</span><span class="rch-sep">›</span>
-            <span>Ponte di Legno</span><span class="rch-sep">›</span>
-            <span>Edolo / Tirano</span><span class="rch-sep">›</span>
-            <span>train → Lake Como</span>
-          </div>
-          <div class="stage-night-pill"><span class="night-tag">Nights 1+2</span> Lake Como (+ rest day Tue 21)</div>
-          <div class="stage-detail"><strong>Rest day follows</strong>Tuesday 21 July at Lake Como. Swim, eat, recover before France.</div>
+          <div class="stage-chain"><span>Bormio</span><span class="chain-sep">/</span><span>Santa Caterina</span><span class="chain-sep">/</span><span>Passo di Gavia (2,621m)</span><span class="chain-sep">/</span><span>Ponte di Legno</span><span class="chain-sep">/</span><span>Edolo / Tirano</span><span class="chain-sep">/</span><span>train → Lake Como</span></div>
+          <div class="stage-pill"><span class="pill-tag">Nights 1+2</span> Lake Como (+ rest day Tue 21)</div>
+          <div class="stage-detail"><b>Rest day follows</b>Tuesday 21 July at Lake Como. Swim, eat, recover before France.</div>
         </div>
       </div>
     </div>
 
-    <!-- Stage 4 — Briançon -->
+    <!-- Stage 4 -->
     <div class="stage">
       <div class="stage-grid flip">
-        <div class="stage-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/La_Meije_depuis_le_col_du_Lautaret.jpg?width=1400')">
-          <span class="stage-photo-caption">La Meije from the Col du Lautaret</span>
-        </div>
+        <div class="stage-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/La_Meije_depuis_le_col_du_Lautaret.jpg?width=1400')"><span class="stage-photo-cap">La Meije · Col du Lautaret</span></div>
         <div class="stage-info">
-          <span class="stage-num-tag">Ride Stage 4 · Wednesday 22 July</span>
+          <span class="stage-idx">Ride Stage 4 · Wednesday 22 July</span>
           <div class="stage-name">Como → Oulx → Briançon</div>
           <div class="stage-nums">
             <div><span class="sn-lbl">Riding</span><span class="sn-val">~35km</span></div>
             <div><span class="sn-lbl">Climb</span><span class="sn-val">Montgenèvre</span></div>
             <div><span class="sn-lbl">Summit</span><span class="sn-val">1,860m</span></div>
           </div>
-          <div class="stage-route-chain">
-            <span>Ferry ↑ Lake Como</span><span class="rch-sep">›</span>
-            <span>train → Oulx</span><span class="rch-sep">›</span>
-            <span>Col de Montgenèvre (1,860m)</span><span class="rch-sep">›</span>
-            <span>Briançon</span>
-          </div>
-          <div class="stage-night-pill"><span class="night-tag">Night</span> Logis Hôtel de la Chaussée, Briançon</div>
-          <div class="stage-detail"><strong>Crossing into France</strong>A travel-heavy day — ferry, train, then one alpine col into the highest town in France.</div>
+          <div class="stage-chain"><span>Ferry ↑ Lake Como</span><span class="chain-sep">/</span><span>train → Oulx</span><span class="chain-sep">/</span><span>Col de Montgenèvre (1,860m)</span><span class="chain-sep">/</span><span>Briançon</span></div>
+          <div class="stage-pill"><span class="pill-tag">Night</span> Logis Hôtel de la Chaussée, Briançon</div>
+          <div class="stage-detail"><b>Crossing into France</b>A travel-heavy day — ferry, train, then one alpine col into the highest town in France.</div>
         </div>
       </div>
-      <div class="stage-map-row">
+      <div class="stage-map">
         <span class="map-label">Oulx → Briançon</span>
-        <div class="map-note">Plan shows the <strong>Col de l'Échelle</strong> variant — the only public Komoot tour for this Oulx → Briançon leg. Your route crosses the parallel <strong>Col de Montgenèvre</strong> (the main road); similar distance, both arrive in Briançon.</div>
+        <div class="map-note">Plan shows the <b>Col de l'Échelle</b> variant — the only public Komoot tour for this Oulx → Briançon leg. Your route crosses the parallel <b>Col de Montgenèvre</b> (the main road); similar distance, both arrive in Briançon.</div>
         <iframe class="komoot-frame" src="https://www.komoot.com/tour/2107693948/embed?profile=1" frameborder="0" scrolling="no" loading="lazy"></iframe>
         <a class="komoot-ext" href="https://www.komoot.com/tour/2107693948" target="_blank">Open on Komoot ↗</a>
       </div>
     </div>
 
-    <!-- Stage 5 — Finale -->
+    <!-- Stage 5 -->
     <div class="stage">
       <div class="stage-grid">
-        <div class="stage-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/TDFF24_virages_Alpe_d%27Huez.jpg?width=1400')">
-          <span class="stage-photo-caption">The 21 hairpins of Alpe d'Huez</span>
-        </div>
+        <div class="stage-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/TDFF24_virages_Alpe_d%27Huez.jpg?width=1400')"><span class="stage-photo-cap">The 21 hairpins of Alpe d'Huez</span></div>
         <div class="stage-info">
-          <span class="stage-num-tag">Ride Stage 5 · Thursday 23 July · Finale 🏁</span>
+          <span class="stage-idx">Ride Stage 5 · Thursday 23 July · Finale</span>
           <div class="stage-name">Briançon → foot of Alpe d'Huez</div>
           <div class="stage-nums">
             <div><span class="sn-lbl">Distance</span><span class="sn-val">~50km</span></div>
             <div><span class="sn-lbl">Ascent</span><span class="sn-val">~+900m</span></div>
             <div><span class="sn-lbl">Climb</span><span class="sn-val">Lautaret</span></div>
           </div>
-          <div class="stage-route-chain">
-            <span>Briançon</span><span class="rch-sep">›</span>
-            <span>Col du Lautaret (2,058m)</span><span class="rch-sep">›</span>
-            <span>descent ↓</span><span class="rch-sep">›</span>
-            <span>Bourg d'Oisans — foot of Alpe d'Huez 🏁</span><span class="rch-sep">›</span>
-            <span>watch the Tour</span>
-          </div>
-          <div class="stage-detail"><strong>The finish</strong>Over the Lautaret, then descend to Bourg d'Oisans at the base of Alpe d'Huez. We finish at the bottom and watch the Tour de France tackle the 21 hairpins above us.</div>
+          <div class="stage-chain"><span>Briançon</span><span class="chain-sep">/</span><span>Col du Lautaret (2,058m)</span><span class="chain-sep">/</span><span>descent ↓</span><span class="chain-sep">/</span><span>Bourg d'Oisans — foot of Alpe d'Huez</span><span class="chain-sep">/</span><span>watch the Tour</span></div>
+          <div class="stage-detail"><b>The finish</b>Over the Lautaret, then descend to Bourg d'Oisans at the base of Alpe d'Huez. We finish at the bottom and watch the Tour de France tackle the 21 hairpins above us.</div>
         </div>
       </div>
-      <div class="stage-map-row">
-        <span class="map-label">Our ride · Briançon → Col du Lautaret → Bourg d'Oisans (foot of Alpe d'Huez)</span>
+      <div class="stage-map">
+        <span class="map-label">Our ride · Briançon → Col du Lautaret → Bourg d'Oisans</span>
         <iframe class="komoot-frame" src="https://www.komoot.com/tour/1396366666/embed?profile=1" frameborder="0" scrolling="no" loading="lazy"></iframe>
         <a class="komoot-ext" href="https://www.komoot.com/tour/1396366666" target="_blank">Open on Komoot ↗</a>
-        <span class="map-label">The climb we'll watch · Alpe d'Huez's 21 hairpins (the Tour, from the base)</span>
+        <span class="map-label">The climb we'll watch · Alpe d'Huez's 21 hairpins</span>
         <iframe class="komoot-frame" src="https://www.komoot.com/tour/1837642789/embed?profile=1" frameborder="0" scrolling="no" loading="lazy"></iframe>
         <a class="komoot-ext" href="https://www.komoot.com/tour/1837642789" target="_blank">Open on Komoot ↗</a>
       </div>
@@ -327,32 +287,38 @@ footer{padding:50px 56px;border-top:1px solid var(--border);font-size:10px;lette
   </div>
 </section>
 
-<!-- LOGISTICS -->
-<div class="logistics reveal">
-  <span class="sec-label">Logistics</span>
-  <div class="log-grid">
-    <div class="log-card"><h4>Getting started</h4><ul><li>Bikes on Bolzano → Merano regional train (€7.50)</li><li>Go early to secure bike spaces</li></ul></div>
-    <div class="log-card"><h4>The Stelvio</h4><ul><li>Climb starts at Prato allo Stelvio — 48 hairpins</li><li>Vinschgau cycle path from Merano to Prato</li></ul></div>
-    <div class="log-card"><h4>Bag transfer</h4><ul><li>Bormio Driver: +39 328 7654951</li><li>bormiodriver.com — book ahead</li></ul></div>
-    <div class="log-card"><h4>Alpe d'Huez</h4><ul><li>21 hairpins, each named after a Tour winner</li><li>Pace the Lautaret — the real climb starts after</li></ul></div>
+<!-- BAND 2 -->
+<div class="band">
+  <div class="band-motion" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/TDFF24_virages_Alpe_d%27Huez.jpg?width=2200')"></div>
+  <div class="band-text">
+    <div class="band-q">Finish at the bottom. Watch the Tour climb the rest.</div>
+    <div class="band-c">Alpe d'Huez · the finale</div>
   </div>
 </div>
 
-<div class="next-band">
+<!-- LOGISTICS -->
+<div class="logi reveal">
+  <span class="sec-tag">Logistics</span>
+  <div class="logi-grid">
+    <div class="logi-card"><h4>Getting started</h4><ul><li>Bikes on Bolzano → Merano regional train (€7.50)</li><li>Go early to secure bike spaces</li></ul></div>
+    <div class="logi-card"><h4>The Stelvio</h4><ul><li>Climb starts at Prato allo Stelvio — 48 hairpins</li><li>Vinschgau cycle path from Merano to Prato</li></ul></div>
+    <div class="logi-card"><h4>Bag transfer</h4><ul><li>Bormio Driver: +39 328 7654951</li><li>bormiodriver.com — book ahead</li></ul></div>
+    <div class="logi-card"><h4>Alpe d'Huez</h4><ul><li>21 hairpins, each named after a Tour winner</li><li>We watch from the base — the Tour rides up</li></ul></div>
+  </div>
+</div>
+
+<!-- NEXT -->
+<div class="next">
   <a href="alps-run.html" class="next-link">
     <span class="next-tag">← Part One</span>
     <div class="next-title">The Run</div>
   </a>
-  <a href="alps-adventure.html" class="next-back">Back to overview →</a>
+  <a href="alps-adventure.html" class="next-back">Overview →</a>
 </div>
 
-<footer>South End · Run.Ride the Alps · 14–23 July 2026 · <a href="https://instagram.com/thesouthend.co" target="_blank" rel="noopener" style="color:var(--ride);text-decoration:none">@thesouthend.co</a></footer>
+<footer>South End · Run.Ride the Alps · 14–23 July 2026 · <a href="https://instagram.com/thesouthend.co" target="_blank" rel="noopener">@thesouthend.co</a></footer>
 
 <script>
-const d=document.getElementById('cur-d'),r=document.getElementById('cur-r');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px'});
-(function loop(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(loop)})();
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:0.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
