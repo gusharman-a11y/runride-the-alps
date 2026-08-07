@@ -1,0 +1,96 @@
+{
+ "day0": [
+  "day0_1_title.jpg",
+  "day0_2_001-07-13.jpg",
+  "day0_3_002-07-13.jpg",
+  "day0_4_003-07-13.jpg",
+  "day0_5_005-07-13.jpg"
+ ],
+ "run1": [
+  "run1_1_title.jpg",
+  "run1_2_009-07-14.jpg",
+  "run1_3_013-07-14.jpg",
+  "run1_4_027-07-14.jpg",
+  "run1_5_024-07-14.jpg",
+  "run1_6_122.jpg",
+  "run1_7_042.jpg",
+  "run1_8_138.jpg",
+  "run1_9_map.jpg"
+ ],
+ "run2": [
+  "run2_1_title.jpg",
+  "run2_2_037-07-15.jpg",
+  "run2_3_048-07-15.jpg",
+  "run2_4_053-07-15.jpg",
+  "run2_5_061-07-15.jpg",
+  "run2_6_063-07-15.jpg",
+  "run2_7_064-07-15.jpg",
+  "run2_8_173.jpg",
+  "run2_9_map.jpg"
+ ],
+ "run3": [
+  "run3_1_title.jpg",
+  "run3_2_088-07-16.jpg",
+  "run3_3_093-07-16.jpg",
+  "run3_4_080-07-16.jpg",
+  "run3_5_099-07-16.jpg",
+  "run3_6_107-07-16.jpg",
+  "run3_7_174.jpg",
+  "run3_9_map.jpg"
+ ],
+ "run4": [
+  "run4_1_title.jpg",
+  "run4_2_115-07-17.jpg",
+  "run4_3_111-07-17.jpg",
+  "run4_4_117-07-17.jpg",
+  "run4_5_008.jpg",
+  "run4_6_066.jpg",
+  "run4_7_016.jpg",
+  "run4_9_map.jpg"
+ ],
+ "stelvio": [
+  "stelvio_1_title.jpg",
+  "stelvio_2_119-07-18.jpg",
+  "stelvio_3_123-07-18.jpg",
+  "stelvio_4_121-07-18.jpg",
+  "stelvio_5_118-07-18.jpg",
+  "stelvio_6_129-07-19.jpg",
+  "stelvio_7_188.jpg",
+  "stelvio_9_map.jpg"
+ ],
+ "gavia": [
+  "gavia_1_title.jpg",
+  "gavia_2_130-07-20.jpg",
+  "gavia_3_131-07-20.jpg",
+  "gavia_4_132-07-20.jpg",
+  "gavia_5_133-07-20.jpg",
+  "gavia_6_134-07-21.jpg",
+  "gavia_7_136-07-21.jpg",
+  "gavia_8_148.jpg",
+  "gavia_9_056.jpg",
+  "gavia_10_036.jpg",
+  "gavia_9_map.jpg"
+ ],
+ "echelle": [
+  "echelle_1_title.jpg",
+  "echelle_2_140-07-22.jpg",
+  "echelle_3_142-07-22.jpg",
+  "echelle_4_145-07-22.jpg",
+  "echelle_5_146-07-22.jpg",
+  "echelle_6_039.jpg",
+  "echelle_7_007.jpg",
+  "echelle_9_map.jpg"
+ ],
+ "finale": [
+  "finale_1_title.jpg",
+  "finale_2_153-07-23.jpg",
+  "finale_3_154-07-23.jpg",
+  "finale_4_081.jpg",
+  "finale_5_005.jpg",
+  "finale_9_map.jpg"
+ ],
+ "closer": [
+  "closer_1_title.jpg",
+  "closer_2_010.jpg"
+ ]
+}
