@@ -29,11 +29,18 @@ html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;mix-blend-mode:difference}
-.nav-mark{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.3em;text-transform:uppercase;color:#fff;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;transition:background .3s ease}
+/* Nav legibility: `difference` blending inverted against the hero photography and
+   washed the links out. A scrim carries them over the image; once scrolled past the
+   hero a solid bar carries them over the cream page. White text works in both. */
+nav::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;transition:opacity .3s ease;background:linear-gradient(180deg,rgba(22,22,26,0.78) 0%,rgba(22,22,26,0.42) 55%,rgba(22,22,26,0) 100%)}
+nav.scrolled{background:rgba(22,22,26,0.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+nav.scrolled::before{opacity:0}
+
+.nav-mark{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.3em;text-transform:uppercase;color:#fff;text-decoration:none;text-shadow:0 1px 14px rgba(22,22,26,0.55)}
 .nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;text-decoration:none;opacity:0.85;transition:opacity .2s}
-.nav-links a:hover{opacity:0.5}
+.nav-links a{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;text-decoration:none;opacity:0.94;text-shadow:0 1px 14px rgba(22,22,26,0.55);transition:opacity .2s}
+.nav-links a:hover{opacity:1}
 
 /* HERO */
 .hero{height:88vh;min-height:560px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
@@ -311,6 +318,11 @@ footer a{color:var(--clay);text-decoration:none}
 <script>
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:0.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script>
+(function(){var n=document.querySelector('nav');if(!n)return;
+var f=function(){n.classList.toggle('scrolled',(window.scrollY||window.pageYOffset)>60)};
+f();window.addEventListener('scroll',f,{passive:true});})();
 </script>
 </body>
 </html>
