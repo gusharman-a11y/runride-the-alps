@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://gusharman-a11y.github.io/runride-the-alps/</loc><priority>1.0</priority></url>
-  <url><loc>https://gusharman-a11y.github.io/runride-the-alps/alps-run.html</loc><priority>0.8</priority></url>
-  <url><loc>https://gusharman-a11y.github.io/runride-the-alps/alps-ride.html</loc><priority>0.8</priority></url>
-  <url><loc>https://gusharman-a11y.github.io/runride-the-alps/alps-calendar.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.thesouthend.co/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.thesouthend.co/trips.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.thesouthend.co/journal.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.thesouthend.co/gallery.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.thesouthend.co/alps-run.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.thesouthend.co/alps-ride.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.thesouthend.co/alps-calendar.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.thesouthend.co/alps-register.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.thesouthend.co/alps-adventure.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.thesouthend.co/brand-guide.html</loc><priority>0.3</priority></url>
+  <url><loc>https://www.thesouthend.co/journal/day0.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.thesouthend.co/journal/run1.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.thesouthend.co/journal/run2.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.thesouthend.co/journal/run3.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.thesouthend.co/journal/run4.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.thesouthend.co/journal/stelvio.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.thesouthend.co/journal/gavia.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.thesouthend.co/journal/echelle.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.thesouthend.co/journal/finale.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.thesouthend.co/journal/closer.html</loc><priority>0.7</priority></url>
 </urlset>

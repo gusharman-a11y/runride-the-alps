@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Trips | South End</title>
+<meta name="description" content="Every South End trip. Run.Ride the Alps 2026: four days hut-to-hut in the Dolomites, then the road west to Alpe d'Huez. Registration for July 2027 is open.">
+<link rel="canonical" href="https://www.thesouthend.co/trips.html">
+<meta name="theme-color" content="#16161A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='9' fill='%2316161A'/%3E%3Ctext x='24' y='33' font-family='Helvetica,Arial,sans-serif' font-size='23' font-weight='700' fill='%23EDEBE5' text-anchor='middle'%3ESE%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="South End">
+<meta property="og:title" content="Our Trips | South End">
+<meta property="og:description" content="Every South End trip. Run.Ride the Alps 2026 is done. July 2027 is open.">
+<meta property="og:url" content="https://www.thesouthend.co/trips.html">
+<meta property="og:image" content="https://www.thesouthend.co/ig/run2_5_061-07-15.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.thesouthend.co/ig/run2_5_061-07-15.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#16161A;--paper:#EDEBE5;--paper-2:#E4E1D8;--stone:#9A988F;
+  --line:rgba(22,22,26,0.13);--line-soft:rgba(22,22,26,0.07);--clay:#B5613D;
+}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;transition:background .3s ease}
+nav::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;transition:opacity .3s ease;background:linear-gradient(180deg,rgba(22,22,26,0.78) 0%,rgba(22,22,26,0.42) 55%,rgba(22,22,26,0) 100%)}
+nav.scrolled{background:rgba(22,22,26,0.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+nav.scrolled::before{opacity:0}
+.nav-mark{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.3em;text-transform:uppercase;color:#fff;text-decoration:none;text-shadow:0 1px 14px rgba(22,22,26,0.55)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#fff;text-decoration:none;opacity:0.94;text-shadow:0 1px 14px rgba(22,22,26,0.55);transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+
+.hero{height:62vh;min-height:400px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-motion{position:absolute;inset:-6%;background:url('ig/run2_5_061-07-15.jpg') center 38%/cover;animation:kb 30s ease-in-out infinite alternate;filter:saturate(0.85) contrast(1.07) brightness(0.93) sepia(0.1)}
+@keyframes kb{0%{transform:scale(1.06) translate(2%,1%)}100%{transform:scale(1.14) translate(-2%,-1.5%)}}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,22,26,0.5) 0%,rgba(22,22,26,0.22) 45%,rgba(22,22,26,0.78) 100%)}
+.hero-body{position:relative;z-index:3;padding:0 48px 54px;color:var(--paper)}
+.hb-eyebrow{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(237,235,229,0.94);text-shadow:0 1px 14px rgba(22,22,26,0.75);margin-bottom:18px;display:block}
+.hb-title{font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:clamp(2.8rem,8vw,6.5rem);line-height:0.9;letter-spacing:-0.025em;margin-bottom:20px}
+.hb-sub{font-size:15px;line-height:1.65;max-width:600px;color:rgba(237,235,229,0.9)}
+
+.sec{max-width:1180px;margin:0 auto;padding:84px 48px}
+.sec-tag{font-family:'Schibsted Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--stone);margin-bottom:16px;display:block}
+.sec-h{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:clamp(1.9rem,4vw,3rem);line-height:0.98;letter-spacing:-0.015em;margin-bottom:28px}
+
+/* A trip is one block: photo panel, then everything inside it. */
+.trip{border:1px solid var(--line);margin-bottom:48px;background:var(--paper)}
+.trip-head{display:grid;grid-template-columns:1.15fr 1fr;min-height:340px}
+.trip-photo{position:relative;background-size:cover;background-position:center;filter:saturate(0.85) contrast(1.06) brightness(0.9) sepia(0.1)}
+.trip-info{padding:44px 46px;display:flex;flex-direction:column;justify-content:center}
+.trip-status{font-family:'Schibsted Grotesk',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:12px}
+.trip-status.open{color:var(--clay)}
+.trip-name{font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:clamp(1.9rem,3.6vw,3rem);line-height:0.94;letter-spacing:-0.02em;margin-bottom:16px}
+.trip-desc{font-size:14.5px;line-height:1.7;color:#46443e;margin-bottom:24px;max-width:460px}
+.trip-nums{display:flex;gap:28px;flex-wrap:wrap;padding-top:22px;border-top:1px solid var(--line)}
+.tn-val{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:1.3rem;line-height:1;display:block;margin-bottom:5px}
+.tn-lbl{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)}
+
+/* Child pages of a trip */
+.trip-kids{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.kid{background:var(--paper);padding:26px 28px 30px;text-decoration:none;transition:background .2s}
+.kid:hover{background:var(--paper-2)}
+.kid-tag{font-family:'Schibsted Grotesk',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--clay);display:block;margin-bottom:10px}
+.kid-h{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:1.15rem;line-height:1.1;letter-spacing:-0.01em;margin-bottom:8px}
+.kid-p{font-size:12.5px;line-height:1.6;color:#46443e}
+
+.cta{display:inline-block;font-family:'Schibsted Grotesk',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;background:var(--clay);color:var(--paper);text-decoration:none;padding:16px 34px;transition:background .2s}
+.cta:hover{background:#9c4f30}
+
+footer{padding:46px 48px;border-top:1px solid var(--line);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--stone);text-align:center}
+footer a{color:var(--clay);text-decoration:none}
+
+@media(max-width:860px){
+ nav{padding:16px 20px}.nav-links{gap:14px}
+ .nav-links a{font-size:10px;letter-spacing:0.14em}
+ .hero-body{padding:0 22px 40px}
+ .sec{padding:56px 22px}
+ .trip-head{grid-template-columns:1fr}
+ .trip-photo{min-height:260px}
+ .trip-info{padding:32px 24px}
+ footer{padding:34px 22px}
+}
+@media(prefers-reduced-motion:reduce){.hero-motion{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-mark">South End</a>
+  <ul class="nav-links">
+    <li><a href="trips.html">Our Trips</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="gallery.html">Photos</a></li>
+    <li><a href="alps-register.html">Register</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-motion"></div>
+  <div class="hero-body">
+    <span class="hb-eyebrow">South End</span>
+    <h1 class="hb-title">Our Trips</h1>
+    <p class="hb-sub">Small crews, big ranges. One trip in the bank, one open for names.</p>
+  </div>
+</header>
+
+<section class="sec">
+  <span class="sec-tag">The trips</span>
+  <h2 class="sec-h">Where we've been.<br>Where we're going.</h2>
+
+  <!-- 2026 -->
+  <article class="trip">
+    <div class="trip-head">
+      <div class="trip-photo" style="background-image:url('ig/v10_run1_title.jpg')"></div>
+      <div class="trip-info">
+        <span class="trip-status">2026 · Completed</span>
+        <h3 class="trip-name">Run.Ride<br>the Alps</h3>
+        <p class="trip-desc">Four days hut to hut on the Alta Via 2 through the Dolomites, then the bikes and the road west over the Stelvio and the Gavia to the bottom of Alpe d'Huez, in time for the Tour.</p>
+        <div class="trip-nums">
+          <div><span class="tn-val">339km</span><span class="tn-lbl">Distance</span></div>
+          <div><span class="tn-val">+11,960m</span><span class="tn-lbl">Ascent</span></div>
+          <div><span class="tn-val">11 days</span><span class="tn-lbl">On the move</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="trip-kids">
+      <a class="kid" href="alps-adventure.html">
+        <span class="kid-tag">Overview</span>
+        <div class="kid-h">The trip</div>
+        <p class="kid-p">The whole thing, start to finish.</p>
+      </a>
+      <a class="kid" href="alps-run.html">
+        <span class="kid-tag">Part One</span>
+        <div class="kid-h">The Run</div>
+        <p class="kid-p">Alta Via 2, four days, four huts.</p>
+      </a>
+      <a class="kid" href="alps-ride.html">
+        <span class="kid-tag">Part Two</span>
+        <div class="kid-h">The Ride</div>
+        <p class="kid-p">Stelvio, Gavia, Lautaret, Alpe d'Huez.</p>
+      </a>
+      <a class="kid" href="alps-calendar.html">
+        <span class="kid-tag">Day by day</span>
+        <div class="kid-h">Calendar</div>
+        <p class="kid-p">Every day, mapped and dated.</p>
+      </a>
+      <a class="kid" href="journal.html">
+        <span class="kid-tag">Written up</span>
+        <div class="kid-h">Journal</div>
+        <p class="kid-p">Eleven entries, one per day.</p>
+      </a>
+      <a class="kid" href="gallery.html">
+        <span class="kid-tag">Photographs</span>
+        <div class="kid-h">Gallery</div>
+        <p class="kid-p">74 frames, in order.</p>
+      </a>
+    </div>
+  </article>
+
+  <!-- 2027 -->
+  <article class="trip">
+    <div class="trip-head">
+      <div class="trip-photo" style="background-image:url('ig/v8_stelvio_hp_bend.jpg')"></div>
+      <div class="trip-info">
+        <span class="trip-status open">2027 · Now open</span>
+        <h3 class="trip-name">The next one</h3>
+        <p class="trip-desc">Roughly ten days in mid-July 2027. Hut-to-hut running through the high ranges, then the storied cols by bike. Route, dates and huts get locked once we know who's in, so registering early shapes the trip.</p>
+        <div class="trip-nums">
+          <div><span class="tn-val">~10 days</span><span class="tn-lbl">Length</span></div>
+          <div><span class="tn-val">July 2027</span><span class="tn-lbl">When</span></div>
+          <div><span class="tn-val">Small</span><span class="tn-lbl">Crew size</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="trip-kids" style="grid-template-columns:1fr">
+      <div class="kid" style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+        <div>
+          <span class="kid-tag">Register your interest</span>
+          <div class="kid-h">No commitment, first dibs.</div>
+        </div>
+        <a class="cta" href="alps-register.html">Register for 2027</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<footer>
+  South End · <a href="https://instagram.com/thesouthend.co" target="_blank" rel="noopener">@thesouthend.co</a>
+</footer>
+
+<script>
+(function(){var n=document.querySelector('nav');if(!n)return;
+var f=function(){n.classList.toggle('scrolled',(window.scrollY||window.pageYOffset)>60)};
+f();window.addEventListener('scroll',f,{passive:true});})();
+</script>
+</body>
+</html>
