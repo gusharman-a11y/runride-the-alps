@@ -1,0 +1,97 @@
+{
+ "day0": [
+  "v4_day0_1_title.jpg",
+  "v4_day0_2_001-07-13.jpg",
+  "v4_day0_3_002-07-13.jpg",
+  "v4_day0_4_003-07-13.jpg",
+  "v4_day0_5_005-07-13.jpg"
+ ],
+ "run1": [
+  "v4_run1_1_title.jpg",
+  "v4_run1_2_009-07-14.jpg",
+  "v4_run1_3_013-07-14.jpg",
+  "v4_run1_4_027-07-14.jpg",
+  "v4_run1_5_024-07-14.jpg",
+  "v4_run1_6_122.jpg",
+  "v4_run1_7_042.jpg",
+  "v4_run1_8_138.jpg",
+  "v4_run1_9_map.jpg"
+ ],
+ "run2": [
+  "v4_run2_1_title.jpg",
+  "v4_run2_2_037-07-15.jpg",
+  "v4_run2_3_048-07-15.jpg",
+  "v4_run2_4_053-07-15.jpg",
+  "v4_run2_5_061-07-15.jpg",
+  "v4_run2_6_063-07-15.jpg",
+  "v4_run2_7_064-07-15.jpg",
+  "v4_run2_8_173.jpg",
+  "v4_run2_9_map.jpg"
+ ],
+ "run3": [
+  "v4_run3_1_title.jpg",
+  "v4_run3_2_088-07-16.jpg",
+  "v4_run3_3_093-07-16.jpg",
+  "v4_run3_4_080-07-16.jpg",
+  "v4_run3_5_099-07-16.jpg",
+  "v4_run3_6_107-07-16.jpg",
+  "v4_run3_7_174.jpg",
+  "v4_run3_9_map.jpg"
+ ],
+ "run4": [
+  "v4_run4_1_title.jpg",
+  "v4_run4_2_115-07-17.jpg",
+  "v4_run4_3_111-07-17.jpg",
+  "v4_run4_4_117-07-17.jpg",
+  "v4_run4_5_008.jpg",
+  "v4_run4_6_066.jpg",
+  "v4_run4_7_016.jpg",
+  "v4_run4_9_map.jpg"
+ ],
+ "stelvio": [
+  "v4_stelvio_1_title.jpg",
+  "v4_stelvio_2_099.jpg",
+  "v4_stelvio_3_119-07-18.jpg",
+  "v4_stelvio_4_123-07-18.jpg",
+  "v4_stelvio_5_121-07-18.jpg",
+  "v4_stelvio_6_118-07-18.jpg",
+  "v4_stelvio_7_129-07-19.jpg",
+  "v4_stelvio_8_188.jpg",
+  "v4_stelvio_9_map.jpg"
+ ],
+ "gavia": [
+  "v4_gavia_1_title.jpg",
+  "v4_gavia_2_130-07-20.jpg",
+  "v4_gavia_3_131-07-20.jpg",
+  "v4_gavia_4_132-07-20.jpg",
+  "v4_gavia_5_133-07-20.jpg",
+  "v4_gavia_6_134-07-21.jpg",
+  "v4_gavia_7_136-07-21.jpg",
+  "v4_gavia_8_148.jpg",
+  "v4_gavia_9_056.jpg",
+  "v4_gavia_10_036.jpg",
+  "v4_gavia_9_map.jpg"
+ ],
+ "echelle": [
+  "v4_echelle_1_title.jpg",
+  "v4_echelle_2_140-07-22.jpg",
+  "v4_echelle_3_142-07-22.jpg",
+  "v4_echelle_4_145-07-22.jpg",
+  "v4_echelle_5_146-07-22.jpg",
+  "v4_echelle_6_039.jpg",
+  "v4_echelle_7_007.jpg",
+  "v4_echelle_9_map.jpg"
+ ],
+ "finale": [
+  "v4_finale_1_title.jpg",
+  "v4_finale_2_153-07-23.jpg",
+  "v4_finale_3_154-07-23.jpg",
+  "v4_finale_4_081.jpg",
+  "v4_finale_5_005.jpg",
+  "v4_finale_9_map.jpg"
+ ],
+ "closer": [
+  "v4_closer_1_title.jpg",
+  "v4_closer_2_010.jpg"
+ ]
+}
