@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Register — Run.Ride the Alps 2027 | South End</title>
-<meta name="description" content="Register your interest for Run.Ride the Alps 2027 — hut-to-hut trail running in the Dolomites and riding the great cols. By South End.">
+<title>Register | Run.Ride the Alps 2027 | South End</title>
+<meta name="description" content="Register your interest for Run.Ride the Alps 2027. Hut-to-hut trail running in the Dolomites and riding the great cols. By South End.">
 <meta name="theme-color" content="#16161A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='9' fill='%2316161A'/%3E%3Ctext x='24' y='33' font-family='Helvetica,Arial,sans-serif' font-size='23' font-weight='700' fill='%23EDEBE5' text-anchor='middle'%3ESE%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="South End">
-<meta property="og:title" content="Register — Run.Ride the Alps 2027">
+<meta property="og:title" content="Register | Run.Ride the Alps 2027">
 <meta property="og:description" content="Put your name down for next year. Run the Dolomites, ride the cols.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,7 +114,7 @@ footer a{color:var(--clay);text-decoration:none}
   <div class="hero-body">
     <span class="hb-eyebrow">Run.Ride the Alps · 2027</span>
     <h1 class="hb-title">Next<br>year.</h1>
-    <p class="hb-sub">The 2026 edition is done. The mountains aren't going anywhere — put your name down for July 2027 and we'll build the next one together.</p>
+    <p class="hb-sub">The 2026 edition is done. The mountains aren't going anywhere. Put your name down for July 2027 and we'll build the next one together.</p>
   </div>
 </section>
 
@@ -123,12 +123,12 @@ footer a{color:var(--clay);text-decoration:none}
     <div class="reg-side">
       <span class="sec-tag">The idea</span>
       <h2 class="sec-h">Same mountains, new crew.</h2>
-      <p class="route-prose" style="font-size:1.05rem">Registering isn't a commitment — it's a hand up. Once we know who's in, we'll lock dates, route and huts, and you'll be first to hear.</p>
+      <p class="route-prose" style="font-size:1.05rem">Registering isn't a commitment. It's a hand up. Once we know who's in, we'll lock dates, route and huts, and you'll be first to hear.</p>
       <h3>What you're signing up for</h3>
       <ul>
-        <li>Hut-to-hut trail running through the Dolomites — big days, long views</li>
-        <li>Riding the storied cols — think Alpe d'Huez territory</li>
-        <li>Roughly ten days, mid-July 2027 — exact dates set with the crew</li>
+        <li>Hut-to-hut trail running through the Dolomites. Big days, long views</li>
+        <li>Riding the storied cols. Think Alpe d'Huez territory</li>
+        <li>Roughly ten days, mid-July 2027. Exact dates set with the crew</li>
       </ul>
       <h3>What happens next</h3>
       <ul>
@@ -161,7 +161,7 @@ footer a{color:var(--clay);text-decoration:none}
         </div>
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <button class="f-btn" type="submit" id="f-submit">Put my name down</button>
-        <p class="f-note">No spam, no commitment — just first dibs when 2027 takes shape.</p>
+        <p class="f-note">No spam, no commitment. Just first dibs when 2027 takes shape.</p>
         <div class="f-err" id="f-err">Something glitched sending that. Try again, or just email <a href="mailto:gusharman@gmail.com?subject=Run.Ride%20the%20Alps%202027">gusharman@gmail.com</a> with your name and run/ride/both.</div>
       </form>
       <div class="f-done" id="f-done">
@@ -187,7 +187,7 @@ form.addEventListener('submit',async e=>{
   err.style.display='none';
   btn.disabled=true;btn.textContent='Sending…';
   const data=Object.fromEntries(new FormData(form).entries());
-  data._subject='Run.Ride the Alps 2027 — registration: '+data.name;
+  data._subject='Run.Ride the Alps 2027 registration: '+data.name;
   data._template='table';
   try{
     const r=await fetch('https://formsubmit.co/ajax/gusharman@gmail.com',{
